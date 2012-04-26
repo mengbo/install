@@ -1,0 +1,23 @@
+#!/bin/sh -v
+
+mkdir -p ~/.lftp
+cat > ~/.lftp/rc << EOF
+set ftp:charset "GB18030"
+EOF
+
+cat > ~/.irbrc << EOF
+IRB.conf[:AUTO_INDENT] = true
+IRB.conf[:USE_READLINE] = true
+IRB.conf[:LOAD_MODULES] ||= []
+IRB.conf[:LOAD_MODULES] |= ['irb/completion']
+EOF
+
+grep "# set RUBYLIB" ~/.profile || cat >> ~/.profile << EOF
+
+# set RUBYLIB
+RUBYLIB=\$HOME/usr/ruby
+export RUBYLIB
+EOF
+
+rm -f ~/bin
+ln -f -s usr/bin ~/bin

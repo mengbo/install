@@ -1,0 +1,20 @@
+#!/bin/sh -v
+
+aptitude -y install vsftpd
+if [ ! -f /etc/vsftpd.conf.default ]; then
+	cp /etc/vsftpd.conf /etc/vsftpd.conf.default
+fi
+cp /etc/vsftpd.conf /etc/vsftpd.conf.orig
+grep "anonymous_enable=YES" /etc/vsftpd.conf > /dev/null || cat >> /etc/vsftpd.conf << EOF
+
+# Allow the anonymous FTP user to upload files. 
+anonymous_enable=YES
+write_enable=YES
+local_umask=022
+anon_upload_enable=YES
+anon_mkdir_write_enable=YES
+EOF
+mkdir -p /srv/ftp/upload
+chown ftp:nogroup /srv/ftp/upload
+service vsftpd restart
+#update-rc.d -f vsftpd remove

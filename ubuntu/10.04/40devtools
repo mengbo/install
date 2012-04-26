@@ -1,0 +1,10 @@
+#!/bin/sh -v
+
+aptitude -y install vim-gnome
+aptitude -y install ctags
+
+aptitude -y install subversion
+
+aptitude -y install git-core curl
+
+aptitude -y install build-essential

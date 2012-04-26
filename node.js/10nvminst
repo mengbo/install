@@ -1,0 +1,11 @@
+#!/bin/sh -v
+
+sudo aptitude install curl git-core
+
+git clone git://github.com/creationix/nvm.git ~/.nvm
+
+cat >> $HOME/.bashrc << EOF
+
+# Activate nvm
+[[ -s "\$HOME/.nvm/nvm.sh" ]] && . "\$HOME/.nvm/nvm.sh"
+EOF

@@ -1,0 +1,22 @@
+#!/bin/sh -v
+
+aptitude -y install ubuntu-desktop
+aptitude -y install ubuntu-restricted-extras
+
+aptitude -y install language-pack-zh language-support-zh
+aptitude -y install language-pack-gnome-zh gnome-user-guide-zh
+aptitude -y install openoffice.org-l10n-zh-cn openoffice.org-help-zh-cn
+aptitude -y install openoffice.org-l10n-zh-tw openoffice.org-help-zh-tw
+
+aptitude -y install nautilus-open-terminal
+
+aptitude -y install evince
+aptitude -y install poppler-data
+aptitude -y install xpdf-chinese-simplified xpdf-chinese-traditional
+rm -rf /etc/fonts/conf.d/49-sansserif.conf
+
+aptitude -y install stardict
+
+aptitude -y install gimp
+
+aptitude -y install recordmydesktop

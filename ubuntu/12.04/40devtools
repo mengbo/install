@@ -1,0 +1,17 @@
+#!/bin/sh -v
+
+aptitude -y install vim-gtk
+cat > /usr/local/bin/gvim << EOF
+#!/bin/sh
+
+/usr/bin/gvim -f \$* &
+EOF
+chmod +x /usr/local/bin/gvim
+
+aptitude -y install exuberant-ctags
+
+aptitude -y install subversion
+
+aptitude -y install git curl
+
+aptitude -y install build-essential

@@ -1,0 +1,33 @@
+#!/bin/sh -v
+
+aptitude -y install ubuntu-desktop
+aptitude -y install ubuntu-restricted-extras
+
+aptitude -y install ttf-wqy-microhei ttf-wqy-zenhei
+aptitude -y install fonts-arphic-uming fonts-arphic-ukai 
+aptitude -y install fonts-arphic-gbsn00lp fonts-arphic-gkai00mp
+aptitude -y install fonts-arphic-bsmi00lp fonts-arphic-bkai00mp
+
+aptitude -y install ibus-sunpinyin ibus-table-wubi
+
+aptitude -y install language-pack-zh-hans
+aptitude -y install language-pack-gnome-zh-hans
+aptitude -y install firefox-locale-zh-hans firefox-locale-zh-hant
+aptitude -y install thunderbird-locale-zh-hans thunderbird-locale-zh-cn
+aptitude -y install libreoffice-l10n-zh-cn libreoffice-help-zh-cn
+
+aptitude -y install evince
+aptitude -y install poppler-data
+
+aptitude -y install cmap-adobe-gb1
+aptitude -y install cmap-adobe-cns1
+
+aptitude -y install stardict
+
+aptitude -y install gimp gimp-help-en
+
+aptitude -y install recordmydesktop
+
+aptitude -y install nautilus-open-terminal
+
+aptitude -y install rdesktop

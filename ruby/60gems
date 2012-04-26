@@ -1,0 +1,9 @@
+#!/bin/bash -v
+
+source $HOME/.rvm/scripts/rvm
+
+#rvm use default
+
+#sudo aptitude -y install imagemagick
+#sudo aptitude -y install libmagick9-dev
+#gem install rmagick

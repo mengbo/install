@@ -1,0 +1,12 @@
+#!/bin/sh -v
+
+VENDOR="High Tech Computer"
+ID=`lsusb |grep "$VENDOR" | sed -e 's/.*ID //' -e 's/:.*$//'`
+
+cat > /etc/udev/rules.d/51-android.rules << EOF
+SUBSYSTEM=="usb", SYSFS{"$VENDOR"}=="$ID", MODE="0666", GROUP="plugdev"
+EOF
+
+chmod a+r /etc/udev/rules.d/51-android.rules
+
+service udev restart

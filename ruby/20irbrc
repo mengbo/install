@@ -1,0 +1,8 @@
+#!/bin/sh -v
+
+cat > ~/.irbrc << EOF
+IRB.conf[:AUTO_INDENT] = true
+IRB.conf[:USE_READLINE] = true
+IRB.conf[:LOAD_MODULES] ||= []
+IRB.conf[:LOAD_MODULES] |= ['irb/completion']
+EOF

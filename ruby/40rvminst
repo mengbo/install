@@ -1,0 +1,15 @@
+#!/bin/bash -v
+
+sudo aptitude install curl git-core
+
+bash < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
+
+#if [ -f $HOME/.bash_profile ]; then
+#    mv $HOME/.bash_profile $HOME/.bash_profile.orig
+#fi
+#
+#cat >> $HOME/.bashrc << EOF
+#
+## Load RVM function
+#[[ -s "\$HOME/.rvm/scripts/rvm" ]] && . "\$HOME/.rvm/scripts/rvm"
+#EOF

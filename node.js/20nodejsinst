@@ -1,0 +1,8 @@
+#!/bin/bash -v
+
+source $HOME/.nvm/nvm.sh
+
+#sudo aptitude install build-essential libssl-dev
+
+#nvm install v0.6.4
+#nvm alias default v0.6.4

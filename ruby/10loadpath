@@ -1,0 +1,8 @@
+#!/bin/sh -v
+
+grep "# set RUBYLIB" ~/.profile || cat >> ~/.profile << EOF
+
+# set RUBYLIB
+RUBYLIB=\$HOME/usr/ruby
+export RUBYLIB
+EOF

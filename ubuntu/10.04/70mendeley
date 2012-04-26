@@ -1,0 +1,7 @@
+#!/bin/sh -v
+
+cat > /etc/apt/sources.list.d/mendeley.list << EOF
+deb http://www.mendeley.com/repositories/xUbuntu_10.04 /
+EOF
+aptitude -y update
+aptitude -y install mendeleydesktop

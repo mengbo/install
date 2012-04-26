@@ -1,0 +1,14 @@
+#!/bin/sh -v
+
+aptitude -y install mysql-server
+cat > /etc/mysql/conf.d/charset.cnf << EOF
+[mysqld]
+init_connect='SET NAMES utf8'
+character-set-server=utf8
+collation-server=utf8_general_ci
+
+[mysql]
+default-character-set=utf8
+EOF
+service mysql restart
+#update-rc.d -f mysql remove

@@ -1,0 +1,20 @@
+#!/bin/bash -v
+
+source $HOME/.rvm/scripts/rvm
+
+#rvm use 1.9.3
+#rvm gemset create rails
+#rvm alias create rails 1.9.3@rails
+#rvm use rails
+
+#sudo aptitude -y install sqlite3
+#sudo aptitude -y install libsqlite3-dev
+#gem install sqlite3
+
+#sudo aptitude -y install mysql-client
+#sudo aptitude -y install libmysqlclient-dev
+#gem install mysql2
+
+#gem install rails
+#gem install termios
+#gem install capistrano

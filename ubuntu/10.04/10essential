@@ -1,0 +1,25 @@
+#!/bin/sh -v
+
+if [ ! -f /etc/apt/sources.list.default ]; then
+	cp /etc/apt/sources.list /etc/apt/sources.list.default
+fi
+cp /etc/apt/sources.list /etc/apt/sources.list.orig
+cat > /etc/apt/sources.list << EOF
+deb http://mirror.dlut.edu.cn/ubuntu/ lucid main multiverse restricted universe
+deb http://mirror.dlut.edu.cn/ubuntu/ lucid-updates main multiverse restricted universe
+deb http://mirror.dlut.edu.cn/ubuntu/ lucid-security main multiverse restricted universe
+deb http://mirror.dlut.edu.cn/ubuntu/ lucid-backports main multiverse restricted universe
+#deb http://mirror.dlut.edu.cn/ubuntu/ lucid-proposed main multiverse restricted universe
+#deb http://archive.canonical.com/ubuntu lucid partner
+EOF
+aptitude -y update
+aptitude -y full-upgrade
+
+aptitude -y install bash bash-completion
+grep "set -o vi" /etc/bash.bashrc > /dev/null || cat >> /etc/bash.bashrc << EOF
+
+# Use a vi-style command line editing interface
+set -o vi
+EOF
+
+aptitude -y install ssh

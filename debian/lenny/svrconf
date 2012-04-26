@@ -1,0 +1,48 @@
+#!/bin/sh
+
+
+echo "aptitude::Recommends-Important \"0\";" >> /etc/apt/apt.conf.d/05aptitude
+
+
+cp /etc/apt/sources.list /etc/apt/sources.list.orig
+cat > /etc/apt/sources.list << EOF
+deb http://mirror.dlut.edu.cn/debian/ stable main contrib non-free
+deb http://mirror.dlut.edu.cn/debian-security/ stable/updates main contrib non-free
+deb http://volatile.debian.org/debian-volatile stable/volatile main contrib non-free
+EOF
+
+
+aptitude update
+aptitude dist-upgrade
+
+
+aptitude install bash bash-completion
+#ln -f -s bash /bin/sh
+cat >> /etc/bash.bashrc << EOF
+
+# enable bash completion in interactive shells
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
+# Use a vi-style command line editing interface
+set -o vi
+EOF
+cat >> /etc/profile << EOF
+
+if [ "\$BASH" ]; then
+  if [ -f /etc/bash.bashrc ]; then
+    . /etc/bash.bashrc
+  fi
+fi
+EOF
+
+
+
+echo "NEED_STATD=no" >> /etc/default/nfs-common
+
+echo "OPTIONS=\"-i 127.0.0.1\"" >> /etc/default/portmap
+
+
+
+aptitude install openssh-server

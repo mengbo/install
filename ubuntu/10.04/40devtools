@@ -6,8 +6,6 @@ aptitude -y install ctags
 aptitude -y install subversion
 
 aptitude -y install git-core curl
-wget --no-check-certificate -q -O - https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
-wget --no-check-certificate -q -O - https://github.com/bobthecow/git-flow-completion/raw/master/git-flow-completion.bash > /etc/bash_completion.d/git-flow
 
 wget --no-check-certificate -q -O - \
 	https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash

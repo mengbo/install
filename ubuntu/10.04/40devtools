@@ -7,4 +7,14 @@ aptitude -y install subversion
 
 aptitude -y install git-core curl
 
+wget --no-check-certificate -q -O - \
+	https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
+rm -rf gitflow
+
+wget --no-check-certificate -q -O - \
+	https://github.com/bobthecow/git-flow-completion/raw/master/git-flow-completion.bash > \
+	/etc/bash_completion.d/git-flow
+grep 'flow)' /etc/bash_completion.d/git || \
+	sed -i "/format-patch)/ a\\\tflow)        _git_flow ;;" /etc/bash_completion.d/git
+
 aptitude -y install build-essential

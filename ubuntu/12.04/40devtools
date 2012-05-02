@@ -12,6 +12,6 @@ aptitude -y install exuberant-ctags
 
 aptitude -y install subversion
 
-aptitude -y install git curl
+aptitude -y install git git-flow curl
 
 aptitude -y install build-essential

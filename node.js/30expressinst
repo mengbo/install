@@ -1,6 +1,11 @@
 #!/bin/bash
 
+run() {
+	echo $@
+	eval $@
+}
+
 source $HOME/.nvm/nvm.sh
 
-nvm use default
-npm install -g express
+run nvm use default
+run npm install -g express

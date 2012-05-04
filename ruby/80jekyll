@@ -1,11 +1,16 @@
 #!/bin/bash
 
+run() {
+	echo $@
+	eval $@
+}
+
 source $HOME/.rvm/scripts/rvm
 
-rvm use 1.9.3
-rvm gemset create jekyll
-rvm alias create jekyll 1.9.3@jekyll
-rvm use jekyll
+run rvm use 1.9.3
+run rvm gemset create jekyll
+run rvm alias create jekyll 1.9.3@jekyll
+run rvm use jekyll
 
-sudo aptitude -y install python-pygments
-gem install jekyll
+run sudo aptitude -y install python-pygments
+run gem install jekyll

@@ -1,20 +1,25 @@
 #!/bin/bash
 
+run() {
+	echo $@
+	eval $@
+}
+
 source $HOME/.rvm/scripts/rvm
 
-rvm use 1.9.3
-rvm gemset create rails
-rvm alias create rails 1.9.3@rails
-rvm use rails
+run rvm use 1.9.3
+run rvm gemset create rails
+run rvm alias create rails 1.9.3@rails
+run rvm use rails
 
-sudo aptitude -y install sqlite3
-sudo aptitude -y install libsqlite3-dev
-gem install sqlite3
+run sudo aptitude -y install sqlite3
+run sudo aptitude -y install libsqlite3-dev
+run gem install sqlite3
 
-sudo aptitude -y install mysql-client
-sudo aptitude -y install libmysqlclient-dev
-gem install mysql2
+run sudo aptitude -y install mysql-client
+run sudo aptitude -y install libmysqlclient-dev
+run gem install mysql2
 
-gem install rails
-gem install termios
-gem install capistrano
+run gem install rails
+run gem install termios
+run gem install capistrano

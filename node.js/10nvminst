@@ -8,4 +8,5 @@ cat >> $HOME/.bashrc << EOF
 
 # Activate nvm
 [[ -s "\$HOME/.nvm/nvm.sh" ]] && . "\$HOME/.nvm/nvm.sh"
+[[ -r \$NVM_DIR/bash_completion ]] && . \$NVM_DIR/bash_completion
 EOF

@@ -1,6 +1,6 @@
-#!/bin/bash -v
+#!/bin/bash
 
 source $HOME/.nvm/nvm.sh
 
-#nvm use default
-#npm install -g express
+nvm use default
+npm install -g express

@@ -1,11 +1,11 @@
-#!/bin/bash -v
+#!/bin/bash
 
 source $HOME/.rvm/scripts/rvm
 
-#rvm use 1.9.3
-#rvm gemset create jekyll
-#rvm alias create jekyll 1.9.3@jekyll
-#rvm use jekyll
+rvm use 1.9.3
+rvm gemset create jekyll
+rvm alias create jekyll 1.9.3@jekyll
+rvm use jekyll
 
-#sudo aptitude -y install python-pygments
-#gem install jekyll
+sudo aptitude -y install python-pygments
+gem install jekyll

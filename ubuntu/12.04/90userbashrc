@@ -1,0 +1,28 @@
+#!/bin/sh -v
+
+cp $HOME/.profile $HOME/.profile.orig
+sed '/# if running bash/,+7d' $HOME/.profile.orig > $HOME/.profile
+sed -i '${/^$/d}' $HOME/.profile
+cat >> $HOME/.profile <<EOF
+
+# if running bash
+if [ -n "\$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "\$HOME/.bashrc" ]; then
+	. "\$HOME/.bashrc"
+    fi
+fi
+EOF
+
+cp $HOME/.bashrc $HOME/.bashrc.orig
+cp /etc/skel/.bashrc $HOME/.bash_interactive
+cat > $HOME/.bashrc << EOF
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If running interactively
+if [ -n "\$PS1" ]; then
+    . "\$HOME/.bash_interactive"
+fi
+EOF

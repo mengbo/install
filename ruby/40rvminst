@@ -2,14 +2,18 @@
 
 sudo aptitude install curl git
 
-bash < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
+curl -L get.rvm.io | bash -s stable
 
 #if [ -f $HOME/.bash_profile ]; then
 #    mv $HOME/.bash_profile $HOME/.bash_profile.orig
 #fi
 #
+#if [ -f $HOME/.bash_login ]; then
+#    mv $HOME/.bash_login $HOME/.bash_login.orig
+#fi
+#
 #cat >> $HOME/.bashrc << EOF
 #
-## Load RVM function
-#[[ -s "\$HOME/.rvm/scripts/rvm" ]] && . "\$HOME/.rvm/scripts/rvm"
+## Load RVM into a shell session *as a function*
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 #EOF

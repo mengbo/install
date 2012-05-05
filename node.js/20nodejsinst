@@ -9,5 +9,5 @@ source $HOME/.nvm/nvm.sh
 
 run sudo aptitude install build-essential libssl-dev
 
-run nvm install v0.6.14
-run nvm alias default v0.6.14
+run nvm install v0.6.17
+run nvm alias default v0.6.17

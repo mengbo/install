@@ -31,3 +31,12 @@ aptitude -y install recordmydesktop
 aptitude -y install nautilus-open-terminal
 
 aptitude -y install rdesktop
+
+mv /etc/xdg/autostart/gnome-keyring-gpg.desktop \
+	/etc/xdg/autostart/gnome-keyring-gpg.desktop.disabled
+mv /etc/xdg/autostart/gnome-keyring-pkcs11.desktop \
+	/etc/xdg/autostart/gnome-keyring-pkcs11.desktop.disabled
+mv /etc/xdg/autostart/gnome-keyring-secrets.desktop \
+	/etc/xdg/autostart/gnome-keyring-secrets.desktop.disabled
+mv /etc/xdg/autostart/gnome-keyring-ssh.desktop \
+	/etc/xdg/autostart/gnome-keyring-ssh.desktop.disabled

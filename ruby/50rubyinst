@@ -2,7 +2,7 @@
 
 run() {
 	echo $@
-	eval $W
+	eval $@
 }
 
 source $HOME/.rvm/scripts/rvm
@@ -11,13 +11,10 @@ INST=`rvm requirements | grep -e '^ *ruby: /usr/bin/apt-get install' | sed s/^.*
 run sudo $INST
 
 run rvm install 1.8.7
-run rvm use 1.8.7@global
-run gem install bundler
-run rvm gemset create default
-
-run rvm use 1.8.7@default --default
+#run rvm use 1.8.7@global
+#run gem install bundler
+run rvm use 1.8.7 --default
 
 run rvm install 1.9.3
-run rvm use 1.9.3@global
-run gem install bundler
-run rvm gemset create default
+#run rvm use 1.9.3@global
+#run gem install bundler

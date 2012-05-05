@@ -12,3 +12,5 @@ source $HOME/.rvm/scripts/rvm
 #run sudo aptitude -y install imagemagick
 #run sudo aptitude -y install libmagick9-dev
 #run gem install rmagick
+
+run gem install pry

@@ -21,5 +21,3 @@ run sudo aptitude -y install libmysqlclient-dev
 run gem install mysql2
 
 run gem install rails
-run gem install termios
-run gem install capistrano

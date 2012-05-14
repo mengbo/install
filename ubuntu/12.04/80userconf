@@ -6,7 +6,7 @@ ln -f -s usr/bin ~/bin
 grep "# set RUBYLIB" ~/.profile || cat >> ~/.profile << EOF
 
 # set RUBYLIB
-RUBYLIB=\$HOME/usr/ruby
+RUBYLIB=\$HOME/.ruby
 export RUBYLIB
 EOF
 

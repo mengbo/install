@@ -30,6 +30,8 @@ aptitude -y install recordmydesktop
 
 aptitude -y install nautilus-open-terminal
 
+aptitude -y install indicator-multiload
+
 aptitude -y install rdesktop
 
 mv /etc/xdg/autostart/gnome-keyring-gpg.desktop \

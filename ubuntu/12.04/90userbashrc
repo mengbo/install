@@ -26,7 +26,3 @@ if [ -n "\$PS1" ]; then
     . "\$HOME/.bash_interactive"
 fi
 EOF
-
-gconftool --type boolean -s /desktop/ibus/panel/show_icon_on_systray true
-gconftool --type boolean -s /desktop/ibus/panel/show true
-gsettings set com.canonical.Unity.Panel systray-whitelist "['all']"

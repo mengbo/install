@@ -21,3 +21,7 @@ mkdir -p ~/.lftp
 cat > ~/.lftp/rc << EOF
 set ftp:charset "GB18030"
 EOF
+
+gconftool --type boolean -s /desktop/ibus/panel/show_icon_on_systray true
+gconftool --type boolean -s /desktop/ibus/panel/show true
+gsettings set com.canonical.Unity.Panel systray-whitelist "['all']"

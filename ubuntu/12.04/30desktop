@@ -3,6 +3,8 @@
 aptitude -y install ubuntu-desktop
 aptitude -y install ubuntu-restricted-extras
 
+aptitude -y install ia32-libs
+
 aptitude -y install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy
 aptitude -y install fonts-arphic-uming fonts-arphic-ukai 
 aptitude -y install fonts-arphic-gbsn00lp fonts-arphic-gkai00mp

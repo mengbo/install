@@ -5,7 +5,7 @@ deb http://download.virtualbox.org/virtualbox/debian precise contrib
 EOF
 wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | apt-key add -
 aptitude -y update
-aptitude -y install virtualbox-4.1
+aptitude -y install virtualbox-4.2
 
 USBUSER=meng
 usermod -G vboxusers -a $USBUSER

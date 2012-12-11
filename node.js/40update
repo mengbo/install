@@ -1,0 +1,18 @@
+#!/bin/bash
+
+run() {
+	echo $@
+	eval $@
+}
+
+
+cd $HOME/.nvm
+git pull
+
+source $HOME/.nvm/nvm.sh
+
+run nvm install v0.8.15
+run nvm alias default v0.8.15
+
+run nvm use default
+run npm install -g express

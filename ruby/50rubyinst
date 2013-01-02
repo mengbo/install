@@ -7,8 +7,8 @@ run() {
 
 source $HOME/.rvm/scripts/rvm
 
-INST=`rvm requirements | grep -e '^ *ruby: /usr/bin/apt-get install' | sed s/^.*apt-get/aptitude/`
-run sudo $INST
+#INST=`rvm requirements | grep -e '^ *ruby: /usr/bin/apt-get install' | sed s/^.*apt-get/aptitude/`
+#run sudo $INST
 
 run rvm install 1.8.7
 run rvm use 1.8.7 --default

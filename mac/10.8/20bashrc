@@ -1,0 +1,22 @@
+#!/bin/sh -v
+
+brew install bash-completion
+
+cat > ~/.bash_profile << EOF
+[ -r ~/.bashrc ] && . ~/.bashrc
+EOF
+
+cat > ~/.bashrc << EOF
+[ -r /etc/bashrc ] && . /etc/bashrc
+
+# enable color support of ls and also add handy aliases
+alias ls='ls -G'
+
+# enable bash completion in interactive shells
+if [ -f /usr/local/etc/bash_completion ] && ! shopt -oq posix; then
+    . /usr/local/etc/bash_completion
+fi
+
+# Use a vi-style command line editing interface
+set -o vi
+EOF

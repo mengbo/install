@@ -1,0 +1,3 @@
+#!/bin/sh -v
+
+ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"

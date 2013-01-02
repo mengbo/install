@@ -7,7 +7,7 @@ run() {
 
 source $HOME/.nvm/nvm.sh
 
-run sudo aptitude install build-essential libssl-dev
+#run sudo aptitude install build-essential libssl-dev
 
 run nvm install v0.8.4
 run nvm alias default v0.8.4

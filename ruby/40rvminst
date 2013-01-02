@@ -1,6 +1,6 @@
 #!/bin/sh -v
 
-#sudo aptitude install curl git
+[ `which aptitude` ] && sudo aptitude install curl git
 
 curl -L get.rvm.io | bash -s stable
 

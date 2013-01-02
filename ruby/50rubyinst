@@ -7,8 +7,24 @@ run() {
 
 source $HOME/.rvm/scripts/rvm
 
-#INST=`rvm requirements | grep -e '^ *ruby: /usr/bin/apt-get install' | sed s/^.*apt-get/aptitude/`
-#run sudo $INST
+if [ `which apt-get` ]; then
+	run sudo apt-get install build-essential \
+		openssl libreadline6 libreadline6-dev \
+		curl git-core zlib1g zlib1g-dev \
+		libssl-dev libyaml-dev libsqlite3-dev sqlite3 \
+		libxml2-dev libxslt-dev \
+		autoconf libc6-dev ncurses-dev automake libtool \
+		bison subversion pkg-config
+elif [ `which brew` ]; then
+	run brew install libksba
+	run brew update
+	run brew tap homebrew/dupes
+	run brew install autoconf automake apple-gcc42
+	run rvm pkg install openssl
+	run brew install tcl
+	run brew install tk
+	export CPPFLAGS=-I/opt/X11/include
+fi
 
 run rvm install 1.8.7
 run rvm use 1.8.7 --default

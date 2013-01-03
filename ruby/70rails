@@ -12,12 +12,11 @@ run rvm gemset create rails
 run rvm alias create rails 1.9.3@rails
 run rvm use rails
 
-run sudo aptitude -y install sqlite3
-run sudo aptitude -y install libsqlite3-dev
+[ `which aptitude` ] && run sudo aptitude -y install sqlite3 libsqlite3-dev
 run gem install sqlite3
 
-run sudo aptitude -y install mysql-client
-run sudo aptitude -y install libmysqlclient-dev
+[ `which aptitude` ] && run sudo aptitude -y install mysql-client libmysqlclient-dev
+[ `which brew` ] && run brew install mysql
 run gem install mysql2
 
 run gem install rails

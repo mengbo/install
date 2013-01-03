@@ -2,15 +2,7 @@
 
 [ `which aptitude` ] && sudo aptitude install curl git
 
-curl -L get.rvm.io | bash -s stable
-
-if [ -f $HOME/.bash_profile ]; then
-    mv $HOME/.bash_profile $HOME/.bash_profile.orig
-fi
-
-if [ -f $HOME/.bash_login ]; then
-    mv $HOME/.bash_login $HOME/.bash_login.orig
-fi
+#curl -L get.rvm.io | bash -s stable
 
 cat >> $HOME/.bashrc << EOF
 

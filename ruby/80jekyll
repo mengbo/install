@@ -12,6 +12,6 @@ run rvm gemset create jekyll
 run rvm alias create jekyll 1.9.3@jekyll
 run rvm use jekyll
 
-run sudo aptitude -y install python-pygments
+[ `which aptitude` ] && run sudo aptitude -y install python-pygments
 run gem install jekyll
 run gem install rdiscount

@@ -10,12 +10,11 @@ brew install nmap
 
 brew install minicom lrzsz
 if [ ! -f /usr/local/etc/minirc.dfl.default ]; then
-        mv /usr/local/etc/minirc.dfl /usr/local/etc/minirc.dfl.default
+        cp /usr/local/etc/minirc.dfl /usr/local/etc/minirc.dfl.default
 fi
-cat > /usr/local/etc/minirc.9600 << EOF
-pu lock /usr/local/Cellar/minicom/2.6.1/var
-pu escape-key Escape (Meta)
-pu port             /dev/ttyS0
+cat /usr/local/etc/minirc.dfl.default > /usr/local/etc/minirc.9600
+cat >> /usr/local/etc/minirc.9600 << EOF
+pu port             /dev/tty.usbserial
 pu baudrate         9600
 pu bits             8
 pu parity           N
@@ -24,4 +23,4 @@ pu minit
 pu mreset
 pu rtscts           No
 EOF
-ln -f -s /usr/local/etc/minirc.9600 /usr/local/etc/minirc.dfl
+cat /usr/local/etc/minirc.9600 > /usr/local/etc/minirc.dfl

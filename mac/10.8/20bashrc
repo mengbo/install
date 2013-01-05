@@ -9,6 +9,11 @@ EOF
 cat > ~/.bashrc << EOF
 [ -r /etc/bashrc ] && . /etc/bashrc
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "\$HOME/bin" ] ; then
+    PATH="\$HOME/bin:\$PATH"
+fi
+
 # enable color support of ls and also add handy aliases
 alias ls='ls -G'
 

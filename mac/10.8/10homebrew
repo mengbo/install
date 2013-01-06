@@ -1,5 +1,15 @@
 #!/bin/sh -v
 
-ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+#ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
 
 brew doctor
+
+# Change $PATH setting
+sudo sh -c "cat > /etc/paths << EOF
+/usr/local/bin
+/usr/bin
+/bin
+/usr/local/sbin
+/usr/sbin
+/sbin
+EOF"

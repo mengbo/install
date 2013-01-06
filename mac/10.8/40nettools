@@ -8,6 +8,8 @@ brew install nmap
 
 #brew install wireshark
 
+# Please download and install USB to Serial interface bridge driver, download URL is
+# http://www.prolific.com.tw/UserFiles/files/md_PL2303_MacOSX10_6_dmg_v1_4_0.zip
 brew install minicom lrzsz
 if [ ! -f /usr/local/etc/minirc.dfl.default ]; then
         cp /usr/local/etc/minirc.dfl /usr/local/etc/minirc.dfl.default

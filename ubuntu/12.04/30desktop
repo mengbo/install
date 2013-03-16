@@ -36,6 +36,8 @@ aptitude -y install indicator-multiload
 
 aptitude -y install rdesktop
 
+aptitude -y install network-manager-vpnc
+
 mv /etc/xdg/autostart/gnome-keyring-gpg.desktop \
 	/etc/xdg/autostart/gnome-keyring-gpg.desktop.disabled
 mv /etc/xdg/autostart/gnome-keyring-pkcs11.desktop \

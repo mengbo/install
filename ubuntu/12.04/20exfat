@@ -1,0 +1,7 @@
+#!/bin/sh -v
+
+add-apt-repository ppa:relan/exfat
+
+aptitude update
+
+aptitude -y install fuse-exfat exfat-utils

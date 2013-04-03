@@ -1,0 +1,12 @@
+#!/bin/sh -v
+
+rm -f ~/.local/share/recently-used.xbel
+
+mkdir -p ~/.config/gtk-3.0
+cat >> ~/.config/gtk-3.0/settings.ini << EOF
+[Settings]
+gtk-recent-files-max-age=0
+gtk-recent-files-limit=0
+EOF
+
+echo "gtk-recent-files-max-age=0" >> ~/.gtkrc-2.0

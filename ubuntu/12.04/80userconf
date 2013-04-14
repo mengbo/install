@@ -3,13 +3,6 @@
 rm -f ~/bin
 ln -f -s usr/bin ~/bin
 
-grep "# set RUBYLIB" ~/.profile || cat >> ~/.profile << EOF
-
-# set RUBYLIB
-RUBYLIB=\$HOME/.ruby
-export RUBYLIB
-EOF
-
 cat > ~/.irbrc << EOF
 IRB.conf[:AUTO_INDENT] = true
 IRB.conf[:USE_READLINE] = true

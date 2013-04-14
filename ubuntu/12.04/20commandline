@@ -1,5 +1,7 @@
 #!/bin/sh -v
 
+aptitude -y install sysstat
+
 aptitude -y install screen
 
 aptitude -y install rsync

@@ -16,6 +16,7 @@ source $HOME/.rvm/scripts/rvm
 #run gem update
 #run rvm use default
 #run gem update
+#run rvm remove 1.8.7-p307
 
 #run rvm install 1.9.3
 #
@@ -28,7 +29,6 @@ source $HOME/.rvm/scripts/rvm
 #run rvm use rails
 #run gem update
 #
-#run rvm gemset copy jekyll 1.9.3@jekyll
-#run rvm alias create jekyll 1.9.3@jekyll
-#run rvm use jekyll
-#run gem update
+#run rvm remove ruby-1.9.3-p194
+
+#run rvm cleanup all

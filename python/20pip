@@ -1,5 +1,5 @@
 #!/bin/sh
 
-#sudo aptitude install python-setuptools
+#sudo aptitude install python-dev python-setuptools
 sudo easy_install pip
 

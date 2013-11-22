@@ -1,3 +1,10 @@
-#!/bin/sh
+#!/bin/sh -v
 
 sudo pip install virtualenv
+sudo pip install virtualenvwrapper
+
+cat >> $HOME/.bashrc << EOF
+
+# Load virtualenvwrapper
+source /usr/local/bin/virtualenvwrapper.sh
+EOF

@@ -11,11 +11,8 @@ brew install nmap
 # Please download and install USB to Serial interface bridge driver, download URL is
 # http://www.prolific.com.tw/UserFiles/files/md_PL2303_MacOSX10_6_dmg_v1_4_0.zip
 brew install minicom lrzsz
-if [ ! -f /usr/local/etc/minirc.dfl.default ]; then
-        cp /usr/local/etc/minirc.dfl /usr/local/etc/minirc.dfl.default
-fi
-cat /usr/local/etc/minirc.dfl.default > /usr/local/etc/minirc.9600
-cat >> /usr/local/etc/minirc.9600 << EOF
+cat /usr/local/etc/minirc.dfl > $HOME/.minirc.dfl
+cat >> $HOME/.minirc.dfl << EOF
 pu port             /dev/tty.usbserial
 pu baudrate         9600
 pu bits             8
@@ -25,4 +22,3 @@ pu minit
 pu mreset
 pu rtscts           No
 EOF
-cat /usr/local/etc/minirc.9600 > /usr/local/etc/minirc.dfl

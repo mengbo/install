@@ -1,0 +1,27 @@
+#!/bin/sh -v
+
+brew install bash-completion
+
+cat > ~/.bash_profile << EOF
+[ -r ~/.bashrc ] && . ~/.bashrc
+EOF
+
+cat > ~/.bashrc << EOF
+[ -r /etc/bashrc ] && . /etc/bashrc
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "\$HOME/bin" ] ; then
+    PATH="\$HOME/bin:\$PATH"
+fi
+
+# enable color support of ls and also add handy aliases
+alias ls='ls -G'
+
+# enable bash completion in interactive shells
+if [ -f /usr/local/etc/bash_completion ] && ! shopt -oq posix; then
+    . /usr/local/etc/bash_completion
+fi
+
+# Use a vi-style command line editing interface
+set -o vi
+EOF

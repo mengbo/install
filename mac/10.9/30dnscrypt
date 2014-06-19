@@ -1,0 +1,7 @@
+#!/bin/sh -v
+
+brew install dnscrypt-proxy
+
+#sudo cp -fv /usr/local/opt/dnscrypt-proxy/*.plist /Library/LaunchDaemons
+#sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.dnscrypt-proxy.plist
+

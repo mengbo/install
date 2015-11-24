@@ -1,0 +1,7 @@
+#!/bin/bash
+
+pyenv install 3.5.0
+
+pyenv install 2.7.10
+
+pyenv global 2.7.10

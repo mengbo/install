@@ -1,9 +1,5 @@
 #!/bin/bash
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-
 # Please see the ruby-build wiki for solutions to common problems.
 # https://github.com/sstephenson/ruby-build/wiki
 

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+run() {
+	echo $@
+	eval $@
+}
+
+
+
+# Please see the ruby-build wiki for solutions to common problems.
+# https://github.com/sstephenson/ruby-build/wiki
+#mkdir -p ~/.rbenv/versions/2.1.0/lib
+#run rbenv install 2.1.0
+run rbenv install 2.2.3
+run rbenv global 2.2.3

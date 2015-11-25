@@ -3,7 +3,10 @@
 # Please see the ruby-build wiki for solutions to common problems.
 # https://github.com/sstephenson/ruby-build/wiki
 
-mkdir -p ~/.rbenv/versions/2.1.0/lib
+# For Mac OS X
+#mkdir -p ~/.rbenv/versions/2.1.0/lib
+# For Ubuntu 14.04
+#curl -fsSL https://gist.githubusercontent.com/chrosciu/daa47f611104e6929c35/raw/a5054f2b3595c6464c280dd328ee03b9563f8c3c/readline.patch | rbenv install --patch 2.1.0
 rbenv install 2.1.0
 
 rbenv install 2.2.3

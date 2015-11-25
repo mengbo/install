@@ -1,5 +1,12 @@
 #!/bin/bash
 
 gem install bundler
-bundle config --global path vendor/bundle
+
+mkdir -p ~/.bundle
+cat > ~/.bundle/config << EOF
+---
+BUNDLE_PATH: vendor/bundle
+EOF
+#bundle config --global path vendor/bundle
+
 #brew install homebrew/completions/bundler-completion

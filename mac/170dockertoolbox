@@ -1,3 +1,7 @@
 #!/bin/sh -v
 
 brew cask install dockertoolbox
+
+brew tap homebrew/completions
+brew install docker-completion
+brew install docker-machine-completion

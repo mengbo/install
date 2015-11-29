@@ -1,0 +1,3 @@
+#!/bin/sh -v
+
+brew cask install pl2303

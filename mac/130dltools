@@ -1,0 +1,5 @@
+#!/bin/sh -v
+
+brew cask install transmission
+
+brew cask install thunder

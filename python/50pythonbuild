@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Please see the pyenv wiki for solutions to common problems.
+# https://github.com/yyuu/pyenv/wiki
+
 pyenv install 3.5.0
 
 pyenv install 2.7.10

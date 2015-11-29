@@ -1,0 +1,9 @@
+#!/bin/sh -v
+
+brew install wget
+
+brew install lftp
+mkdir -p ~/.lftp
+cat > ~/.lftp/rc << EOF
+set ftp:charset "GB18030"
+EOF

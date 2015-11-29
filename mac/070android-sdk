@@ -1,0 +1,9 @@
+#!/bin/sh -v
+
+brew install android-sdk
+
+cat >> $HOME/.bashrc << EOF
+
+# Android-SDK
+export ANDROID_HOME=/usr/local/opt/android-sdk
+EOF

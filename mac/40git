@@ -1,0 +1,3 @@
+#!/bin/sh -v
+
+brew install git git-flow

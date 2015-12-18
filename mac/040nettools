@@ -1,5 +1,7 @@
 #!/bin/sh -v
 
+brew install ssh-copy-id
+
 brew install tcptraceroute
 
 brew install hping

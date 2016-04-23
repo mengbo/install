@@ -1,5 +1,9 @@
 #!/bin/sh -v
 
+brew install bash
+sudo sh -c  "echo /usr/local/bin/bash >> /etc/shells" 
+chsh -s /usr/local/bin/bash
+
 brew install bash-completion
 
 [ -f ~/.bash_profile ] && cp ~/.bash_profile ~/.bash_profile.orig

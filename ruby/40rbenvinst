@@ -10,8 +10,8 @@ git clone https://github.com/rkh/rbenv-update.git \
 	~/.rbenv/plugins/rbenv-update
 
 
-cat >> $HOME/.bashrc << EOF
-
+mkdir -p ~/.profile.d
+cat > ~/.profile.d/rbenv.sh << EOF
 # Add ~/.rbenv/bin to your \$PATH
 export PATH="\$HOME/.rbenv/bin:\$PATH"
 # Add rbenv init to your shell

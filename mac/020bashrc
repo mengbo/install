@@ -30,4 +30,14 @@ fi
 
 # Use a vi-style command line editing interface
 set -o vi
+
+# Load ~/.profile.d/*.sh
+if [ -d ~/.profile.d ]; then
+    for i in ~/.profile.d/*.sh; do
+        if [ -r \$i ]; then
+          source \$i
+        fi
+    done
+    unset i
+fi
 EOF

@@ -3,7 +3,7 @@
 brew install zsh
 grep -q /usr/local/bin/zsh /etc/shells || \
 	sudo sh -c  "echo /usr/local/bin/zsh >> /etc/shells" 
-chsh -s /usr/local/bin/zsh
+#chsh -s /usr/local/bin/zsh
 
 [ -f ~/.zshrc ] && cp ~/.zshrc ~/.zshrc.orig
 cat > ~/.zshrc << EOF
@@ -32,35 +32,37 @@ git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 cat > ~/.profile.d/oh-my-zsh.sh << EOF
 export ZSH=/Users/meng/.oh-my-zsh
 ZSH_THEME="robbyrussell"
-plugins=(git vim-mode)
+plugins=(git vi-mode)
+
 EOF
 
 git clone git://github.com/zsh-users/zsh-autosuggestions \
 	~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-echo >> ~/.porfile.d/oh-my-zsh.sh
 cat >> ~/.profile.d/oh-my-zsh.sh << EOF
 # zsh-autosuggestions
 plugins+=(zsh-autosuggestions)
+
 EOF
 
 git clone https://github.com/zsh-users/zsh-completions \
 	~/.oh-my-zsh/custom/plugins/zsh-completions
-echo >> ~/.porfile.d/oh-my-zsh.sh
 cat >> ~/.profile.d/oh-my-zsh.sh << EOF
 # zsh-completions
 plugins+=(zsh-completions)
 autoload -U compinit && compinit
+
 EOF
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
 	~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-echo >> ~/.porfile.d/oh-my-zsh.sh
 cat >> ~/.profile.d/oh-my-zsh.sh << EOF
 # zsh-syntax-highlighting
 plugins+=(zsh-syntax-highlighting history-substring-search)
+
 EOF
 
 echo >> ~/.porfile.d/oh-my-zsh.sh
 cat >> ~/.profile.d/oh-my-zsh.sh << EOF
+
 source \$ZSH/oh-my-zsh.sh
 EOF

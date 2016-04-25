@@ -1,0 +1,66 @@
+#!/bin/sh -v
+
+brew install zsh
+grep -q /usr/local/bin/zsh /etc/shells || \
+	sudo sh -c  "echo /usr/local/bin/zsh >> /etc/shells" 
+chsh -s /usr/local/bin/zsh
+
+[ -f ~/.zshrc ] && cp ~/.zshrc ~/.zshrc.orig
+cat > ~/.zshrc << EOF
+# ~/.zshrc
+PATH="~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/X11/bin"
+if [ "`id -u`" -eq 0 ]; then
+    PATH="\$PATH:~/bin"
+else
+    PATH="~/bin:\$PATH"
+fi
+
+if [ -d ~/.profile.d ]; then
+    for i in ~/.profile.d/*.sh; do
+        if [ -r \$i ]; then
+          source \$i
+        fi
+    done
+    unset i
+fi
+EOF
+mkdir -p ~/.profile.d
+
+
+rm -rf ~/.oh-my-zsh
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cat > ~/.profile.d/oh-my-zsh.sh << EOF
+export ZSH=/Users/meng/.oh-my-zsh
+ZSH_THEME="robbyrussell"
+plugins=(git vim-mode)
+EOF
+
+git clone git://github.com/zsh-users/zsh-autosuggestions \
+	~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+echo >> ~/.porfile.d/oh-my-zsh.sh
+cat >> ~/.profile.d/oh-my-zsh.sh << EOF
+# zsh-autosuggestions
+plugins+=(zsh-autosuggestions)
+EOF
+
+git clone https://github.com/zsh-users/zsh-completions \
+	~/.oh-my-zsh/custom/plugins/zsh-completions
+echo >> ~/.porfile.d/oh-my-zsh.sh
+cat >> ~/.profile.d/oh-my-zsh.sh << EOF
+# zsh-completions
+plugins+=(zsh-completions)
+autoload -U compinit && compinit
+EOF
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+	~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+echo >> ~/.porfile.d/oh-my-zsh.sh
+cat >> ~/.profile.d/oh-my-zsh.sh << EOF
+# zsh-syntax-highlighting
+plugins+=(zsh-syntax-highlighting history-substring-search)
+EOF
+
+echo >> ~/.porfile.d/oh-my-zsh.sh
+cat >> ~/.profile.d/oh-my-zsh.sh << EOF
+source \$ZSH/oh-my-zsh.sh
+EOF

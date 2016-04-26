@@ -22,9 +22,9 @@ fi
 
 if [ -d /etc/profile.d ]; then
     for i in /etc/profile.d/*.sh; do
-      if [ -r \$i ]; then
-          source \$i
-      fi
+        if [ -r \$i ]; then
+            source \$i
+        fi
     done
     unset i
 fi
@@ -32,7 +32,7 @@ fi
 if [ -d ~/.profile.d ]; then
     for i in ~/.profile.d/*.sh; do
         if [ -r \$i ]; then
-          source \$i
+            source \$i
         fi
     done
     unset i
@@ -41,18 +41,17 @@ fi
 if [ -d ~/.zshrc.d ]; then
     for i in ~/.zshrc.d/*.zsh; do
         if [ -r \$i ]; then
-          source \$i
+            source \$i
         fi
     done
     unset i
 fi
 EOF
-mkdir -p ~/.profile.d
-mkdir -p ~/.zshrc.d
 
 
 rm -rf ~/.oh-my-zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+mkdir -p ~/.zshrc.d
 cat > ~/.zshrc.d/oh-my-zsh.zsh << EOF
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="ys"

@@ -35,7 +35,7 @@ set -o vi
 if [ -d ~/.profile.d ]; then
     for i in ~/.profile.d/*.sh; do
         if [ -r \$i ]; then
-          source \$i
+            source \$i
         fi
     done
     unset i
@@ -45,11 +45,9 @@ fi
 if [ -d ~/.bashrc.d/*.bash ]; then
     for i in ~/.bashrc.d/*.bash; do
         if [ -r \$i ]; then
-          source \$i
+            source \$i
         fi
     done
     unset i
 fi
 EOF
-mkdir -p ~/.profile.d
-mkdir -p ~/.bashrc.d

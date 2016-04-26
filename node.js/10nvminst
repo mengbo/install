@@ -4,8 +4,8 @@
 
 git clone git://github.com/creationix/nvm.git ~/.nvm
 
-mkdir -p ~/.profile.d
-cat > ~/.profile.d/nvm.bash << EOF
+mkdir -p ~/.bashrc.d
+cat > ~/.bashrc.d/nvm.bash << EOF
 # Activate nvm
 [[ -s "\$HOME/.nvm/nvm.sh" ]] && . "\$HOME/.nvm/nvm.sh"
 [[ -r \$NVM_DIR/bash_completion ]] && . \$NVM_DIR/bash_completion

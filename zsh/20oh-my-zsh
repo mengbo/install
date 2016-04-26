@@ -8,7 +8,7 @@ if [ -f /etc/zshrc ]; then
     source /etc/zshrc
 fi
 
-PATH="~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 if [ "`id -u`" -eq 0 ]; then
     PATH="\$PATH:~/bin"
@@ -20,8 +20,26 @@ if [ -d /opt/X11/bin ]; then
     PATH="\$PATH:/opt/X11/bin"
 fi
 
+if [ -d /etc/profile.d ]; then
+    for i in /etc/profile.d/*.sh; do
+      if [ -r \$i ]; then
+          source \$i
+      fi
+    done
+    unset i
+fi
+
 if [ -d ~/.profile.d ]; then
-    for i in ~/.profile.d/*.zsh ~/.profile.d/*.sh; do
+    for i in ~/.profile.d/*.sh; do
+        if [ -r \$i ]; then
+          source \$i
+        fi
+    done
+    unset i
+fi
+
+if [ -d ~/.zshrc.d ]; then
+    for i in ~/.zshrc.d/*.zsh; do
         if [ -r \$i ]; then
           source \$i
         fi
@@ -30,20 +48,21 @@ if [ -d ~/.profile.d ]; then
 fi
 EOF
 mkdir -p ~/.profile.d
+mkdir -p ~/.zshrc.d
 
 
 rm -rf ~/.oh-my-zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-cat > ~/.profile.d/oh-my-zsh.zsh << EOF
-export ZSH=/Users/meng/.oh-my-zsh
+cat > ~/.zshrc.d/oh-my-zsh.zsh << EOF
+export ZSH=~/.oh-my-zsh
 ZSH_THEME="ys"
-plugins=(git nvm pyenv rbenv thefuck vi-mode)
+plugins=(command-not-found git nvm pyenv rbenv thefuck vi-mode)
 
 EOF
 
 git clone git://github.com/zsh-users/zsh-autosuggestions \
 	~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-cat >> ~/.profile.d/oh-my-zsh.zsh << EOF
+cat >> ~/.zshrc.d/oh-my-zsh.zsh << EOF
 # zsh-autosuggestions
 plugins+=(zsh-autosuggestions)
 
@@ -60,13 +79,12 @@ EOF
 
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
 	~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-cat >> ~/.profile.d/oh-my-zsh.zsh << EOF
+cat >> ~/.zshrc.d/oh-my-zsh.zsh << EOF
 # zsh-syntax-highlighting
 plugins+=(zsh-syntax-highlighting history-substring-search)
 
 EOF
 
-cat >> ~/.profile.d/oh-my-zsh.zsh << EOF
-
+cat >> ~/.zshrc.d/oh-my-zsh.zsh << EOF
 source \$ZSH/oh-my-zsh.sh
 EOF

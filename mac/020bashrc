@@ -31,8 +31,8 @@ fi
 # Use a vi-style command line editing interface
 set -o vi
 
-# Load ~/.profile.d/*.bash ~/.profile.d/*.sh
-if [ -d ~/.profile.d/*.bash ~/.profile.d ]; then
+# Load ~/.profile.d/*.sh
+if [ -d ~/.profile.d ]; then
     for i in ~/.profile.d/*.sh; do
         if [ -r \$i ]; then
           source \$i
@@ -40,4 +40,16 @@ if [ -d ~/.profile.d/*.bash ~/.profile.d ]; then
     done
     unset i
 fi
+
+# Load ~/.bashrc.d/*.bash
+if [ -d ~/.bashrc.d/*.bash ]; then
+    for i in ~/.bashrc.d/*.bash; do
+        if [ -r \$i ]; then
+          source \$i
+        fi
+    done
+    unset i
+fi
 EOF
+mkdir -p ~/.profile.d
+mkdir -p ~/.bashrc.d

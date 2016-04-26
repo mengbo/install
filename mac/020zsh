@@ -16,7 +16,7 @@ else
 fi
 
 if [ -d ~/.profile.d ]; then
-    for i in ~/.profile.d/*.sh; do
+    for i in ~/.profile.d/*.zsh ~/.profile.d/*.sh; do
         if [ -r \$i ]; then
           source \$i
         fi
@@ -27,18 +27,19 @@ EOF
 mkdir -p ~/.profile.d
 
 
+brew install thefuck
 rm -rf ~/.oh-my-zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-cat > ~/.profile.d/oh-my-zsh.sh << EOF
+cat > ~/.profile.d/oh-my-zsh.zsh << EOF
 export ZSH=/Users/meng/.oh-my-zsh
-ZSH_THEME="robbyrussell"
-plugins=(git vi-mode)
+ZSH_THEME="ys"
+plugins=(git nvm pyenv rbenv nvm thefuck vi-mode)
 
 EOF
 
 git clone git://github.com/zsh-users/zsh-autosuggestions \
 	~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-cat >> ~/.profile.d/oh-my-zsh.sh << EOF
+cat >> ~/.profile.d/oh-my-zsh.zsh << EOF
 # zsh-autosuggestions
 plugins+=(zsh-autosuggestions)
 
@@ -46,7 +47,7 @@ EOF
 
 git clone https://github.com/zsh-users/zsh-completions \
 	~/.oh-my-zsh/custom/plugins/zsh-completions
-cat >> ~/.profile.d/oh-my-zsh.sh << EOF
+cat >> ~/.profile.d/oh-my-zsh.zsh << EOF
 # zsh-completions
 plugins+=(zsh-completions)
 autoload -U compinit && compinit
@@ -55,14 +56,13 @@ EOF
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
 	~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-cat >> ~/.profile.d/oh-my-zsh.sh << EOF
+cat >> ~/.profile.d/oh-my-zsh.zsh << EOF
 # zsh-syntax-highlighting
 plugins+=(zsh-syntax-highlighting history-substring-search)
 
 EOF
 
-echo >> ~/.porfile.d/oh-my-zsh.sh
-cat >> ~/.profile.d/oh-my-zsh.sh << EOF
+cat >> ~/.profile.d/oh-my-zsh.zsh << EOF
 
 source \$ZSH/oh-my-zsh.sh
 EOF

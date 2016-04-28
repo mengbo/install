@@ -11,9 +11,9 @@ fi
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 if [ "`id -u`" -eq 0 ]; then
-    PATH="\$PATH:~/bin"
+    PATH="\$PATH:/root/bin"
 else
-    PATH="~/bin:\$PATH"
+    PATH="\$HOME/bin:\$PATH"
 fi
 
 if [ -d /opt/X11/bin ]; then

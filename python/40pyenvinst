@@ -18,9 +18,15 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 # Add pyenv init to your shell
 eval "\$(pyenv init -)"
 eval "\$(pyenv virtualenv-init -)"
+EOF
+
+cat > ~/.profile.d/pyenv.sh << EOF
 # For Pyenv/Homebrew Combination
 # https://github.com/yyuu/pyenv/issues/106
-alias brew="env PATH=\${PATH//\$(pyenv root)\/shims:/} brew"
+if [ -x /usr/local/bin/brew ]; then
+    PYENV_ROOT=\$(~/.pyenv/bin/pyenv root)
+    alias brew="env PATH=\${PATH//\$PYENV_ROOT\/shims:/} brew"
+fi
 EOF
 
 

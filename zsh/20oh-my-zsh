@@ -69,7 +69,7 @@ EOF
 
 git clone git://github.com/zsh-users/zsh-completions \
 	~/.oh-my-zsh/custom/plugins/zsh-completions
-cat >> ~/.profile.d/oh-my-zsh.zsh << EOF
+cat >> ~/.zshrc.d/oh-my-zsh.zsh << EOF
 # zsh-completions
 plugins+=(zsh-completions)
 autoload -U compinit && compinit

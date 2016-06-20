@@ -33,3 +33,6 @@ pu minit
 pu mreset
 pu rtscts           No
 EOF
+
+brew install dnscrypt-proxy
+sudo brew services start dnscrypt-proxy

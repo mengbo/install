@@ -8,4 +8,4 @@ run() {
 source $HOME/.nvm/nvm.sh
 
 run nvm use default
-run npm install -g express
+run yarn global add express-generator

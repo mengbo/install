@@ -7,7 +7,9 @@ run() {
 
 source $HOME/.nvm/nvm.sh
 
-[ `which aptitude` ] && run sudo aptitude install build-essential libssl-dev
+[ $(which aptitude) ] && run sudo aptitude install build-essential libssl-dev
 
-run nvm install v0.8.4
-run nvm alias default v0.8.4
+run nvm install v6.8.1
+run nvm alias default v6.8.1
+run use default
+run npm install -g yarn

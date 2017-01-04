@@ -5,14 +5,13 @@ run() {
 	eval $@
 }
 
+(
+	cd "$NVM_DIR"
+	git fetch origin
+	git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
+) && . "$NVM_DIR/nvm.sh"
 
-cd $HOME/.nvm
-git pull
-
-source $HOME/.nvm/nvm.sh
-
-run nvm install v0.8.15
-run nvm alias default v0.8.15
-
+run nvm install --lts
+run nvm alias default lts/*
 run nvm use default
-run npm install -g express
+run npm install -g yarn

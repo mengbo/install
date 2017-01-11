@@ -1,7 +1,0 @@
-#!/bin/sh -v
-
-brew cask install dropbox
-
-brew cask install kuaipan
-
-brew cask install copy

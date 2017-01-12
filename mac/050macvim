@@ -1,6 +1,5 @@
 #!/bin/sh -v
 
 brew install editorconfig
-brew install macvim --override-system-vim
-mkdir -p ~/Applications
-brew linkapps
+brew install macvim --with-override-system-vim
+brew linkapps macvim

@@ -1,0 +1,13 @@
+#!/bin/sh -v
+
+cd ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git pull --rebase --stat origin master
+
+cd ~/.oh-my-zsh/custom/plugins/zsh-completions
+git pull --rebase --stat origin master
+
+cd ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+git pull --rebase --stat origin master
+
+cd ~/.oh-my-zsh
+git pull --rebase --stat origin master

@@ -1,0 +1,12 @@
+#!/bin/sh -v
+
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+cat > ~/.ssh/config << EOF
+UseKeychain no
+AddKeysToAgent yes
+
+Host github.com
+  Hostname ssh.github.com
+  Port 443
+EOF

@@ -1,4 +1,4 @@
 #!/bin/sh -v
 
-brew install git git-flow
+brew install git
 brew install tig

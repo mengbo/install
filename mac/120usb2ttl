@@ -2,6 +2,7 @@
 
 brew cask install pl2303
 
-brew cask install ftdi-vcp-driver
+# https://forum.arduino.cc/index.php?topic=427825.0
+#brew cask install ftdi-vcp-driver
 
 brew cask install wch-ch34x-usb-serial-driver

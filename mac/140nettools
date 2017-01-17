@@ -1,8 +1,0 @@
-#!/bin/sh -v
-
-brew cask install wireshark
-
-brew cask install hashcat
-
-brew cask install owasp-zap
-

@@ -11,3 +11,5 @@ brew install zmap
 brew install mitmproxy
 
 brew install sqlmap
+
+brew install hashcat

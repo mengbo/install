@@ -1,5 +1,0 @@
-#!/bin/sh -v
-
-brew install macvim --override-system-vim
-mkdir -p ~/Applications
-brew linkapps

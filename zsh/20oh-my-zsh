@@ -56,7 +56,7 @@ cat > ~/.zshrc.d/oh-my-zsh.zsh << EOF
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="ys"
 plugins=(command-not-found git nvm pyenv rbenv thefuck vi-mode)
-plugins+=(docker docker-compose)
+plugins+=(docker docker-compose vagrant)
 
 EOF
 

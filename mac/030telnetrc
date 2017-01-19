@@ -1,0 +1,5 @@
+#!/bin/sh -v
+
+cat > ~/.telnetrc << EOF
+default unset autologin
+EOF

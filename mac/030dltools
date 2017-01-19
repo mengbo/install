@@ -1,6 +1,7 @@
 #!/bin/sh -v
 
 brew install wget
+brew install aria2
 
 brew install homebrew/boneyard/lftp
 mkdir -p ~/.lftp

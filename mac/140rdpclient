@@ -1,0 +1,5 @@
+#!/bin/sh -v
+
+brew tap caskroom/versions
+
+brew cask install microsoft-remote-desktop-beta

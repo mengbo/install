@@ -1,0 +1,8 @@
+#!/bin/bash
+
+gem install ruby-debug-ide
+gem install debase
+
+gem install rubocop
+
+gem install rcodetools

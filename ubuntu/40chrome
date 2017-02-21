@@ -1,0 +1,8 @@
+#!/bin/sh -v
+
+cat > /etc/apt/sources.list.d/google-chrome.list << EOF
+deb [arch=amd64] https://repo.fdzh.org/chrome/deb/ stable main
+EOF
+#wget -q https://dl.google.com/linux/linux_signing_key.pub -O- | apt-key add -
+apt update
+apt install google-chrome-stable

@@ -25,9 +25,10 @@ gpasswd -a ${USER} docker
 systemctl enable docker
 
 
-cat > /etc/default/docker << EOF
-
-DOCKER_OPTS="-dns 202.118.48.1"
+cat > /etc/docker/daemon.json << EOF
+{
+  "dns": ["202.118.48.1", "202.118.48.252"]
+}
 EOF
 systemctl restart docker
 

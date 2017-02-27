@@ -1,0 +1,9 @@
+#!/bin/sh -v
+
+sudo apt install mysql-server
+#sudo mysql_secure_installation
+#sudo mysqld --initialize
+#sudo systemctl enable mysql
+#sudo systemctl start mysql
+#mysqladmin -p -u root version
+

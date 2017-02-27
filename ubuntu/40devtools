@@ -1,0 +1,9 @@
+#!/bin/sh -v
+
+sudo apt install vim-gtk
+
+sudo apt install exuberant-ctags
+
+sudo apt install git
+
+sudo apt install build-essential

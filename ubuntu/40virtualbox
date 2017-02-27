@@ -1,12 +1,13 @@
 #!/bin/sh -v
 
-cat > /etc/apt/sources.list.d/virtualbox.list << EOF
+sudo tee /etc/apt/sources.list.d/virtualbox.list << EOF > /dev/null
 deb http://download.virtualbox.org/virtualbox/debian xenial contrib
 EOF
-wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | apt-key add -
-wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | apt-key add -
-apt update
-apt install virtualbox-5.1
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- \
+	| sudo apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- \
+	| sudo apt-key add -
+sudo apt update
+sudo apt install virtualbox-5.1
 
-USBUSER=meng
-usermod -G vboxusers -a $USBUSER
+usermod -G vboxusers -a ${USER}

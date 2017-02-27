@@ -1,37 +1,36 @@
 #!/bin/sh -v
 
-apt-get install -y --no-install-recommends \
+sudo apt-get install -y --no-install-recommends \
 	apt-transport-https ca-certificates curl software-properties-common
 
 curl -fsSL https://apt.dockerproject.org/gpg | sudo apt-key add -
 
 echo "deb https://apt.dockerproject.org/repo/ ubuntu-$(lsb_release -cs) main" \
-	> /etc/apt/sources.list.d/docker.list
+	| sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-apt-get update
-apt-get -y install docker-engine
+sudo apt-get update
+sudo apt-get -y install docker-engine
 
 
 # Add the docker group if it doesn't already exist.
-groupadd docker
+sudo groupadd docker
 
 # Add the connected user "${USER}" to the docker group.
 # Change the user name to match your preferred user.
 # You may have to logout and log back in again for
 # this to take effect.
-USER=meng
-gpasswd -a ${USER} docker
+sudo gpasswd -a ${USER} docker
 
-systemctl enable docker
+sudo systemctl enable docker
 
 
-cat > /etc/docker/daemon.json << EOF
+sudo tee /etc/docker/daemon.json << EOF > /dev/null
 {
   "dns": ["202.118.48.1", "202.118.48.252"]
 }
 EOF
-systemctl restart docker
+sudo systemctl restart docker
 
 
-docker pull busybox
-docker run -i -t busybox /bin/echo "hello, docker."
+sudo docker pull busybox
+sudo docker run -i -t busybox /bin/echo "hello, docker."

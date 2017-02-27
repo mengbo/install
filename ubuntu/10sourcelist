@@ -3,10 +3,10 @@
 MIRROR=http://mirrors.ustc.edu.cn/ubuntu
 
 if [ ! -f /etc/apt/sources.list.default ]; then
-	cp /etc/apt/sources.list /etc/apt/sources.list.default
+	sudo cp /etc/apt/sources.list /etc/apt/sources.list.default
 fi
-cp /etc/apt/sources.list /etc/apt/sources.list.orig
-cat > /etc/apt/sources.list << EOF
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.orig
+sudo tee /etc/apt/sources.list << EOF > /dev/null
 deb ${MIRROR} $(lsb_release -cs) main multiverse restricted universe
 # deb-src ${MIRROR} $(lsb_release -cs) main multiverse restricted universe
 deb ${MIRROR} $(lsb_release -cs)-updates main multiverse restricted universe
@@ -19,6 +19,6 @@ deb http://security.ubuntu.com/ubuntu $(lsb_release -cs)-security main multivers
 # deb-src ${MIRROR} $(lsb_release -cs)-proposed main multiverse restricted universe
 # deb http://archive.canonical.com/ubuntu $(lsb_release -cs) partner
 EOF
-apt update
-apt upgrade
-apt full-upgrade
+sudo apt update
+sudo apt upgrade
+sudo apt full-upgrade

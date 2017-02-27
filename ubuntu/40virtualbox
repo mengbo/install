@@ -10,4 +10,4 @@ wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- \
 sudo apt update
 sudo apt install virtualbox-5.1
 
-usermod -G vboxusers -a ${USER}
+sudo usermod -G vboxusers -a ${USER}

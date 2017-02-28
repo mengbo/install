@@ -1,0 +1,31 @@
+#!/bin/sh -v
+
+sudo apt install zsh
+sudo apt install thefuck
+chsh -s /bin/zsh
+
+sudo apt install sysstat
+
+sudo apt install screen
+
+sudo apt install rsync
+
+sudo apt install convmv
+
+sudo apt install tofrodos
+
+sudo apt install unrar
+
+sudo apt install p7zip
+
+sudo apt install curl
+
+sudo apt install wget
+
+sudo apt install lftp
+mkdir -p ~/.lftp
+cat > ~/.lftp/rc << EOF
+set ftp:charset "GB18030"
+EOF
+
+sudo apt install vpnc

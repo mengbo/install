@@ -1,0 +1,31 @@
+#!/bin/sh -v
+
+sudo apt install traceroute
+
+sudo apt install tcptraceroute
+
+sudo apt install netcat-openbsd
+
+sudo apt install snmp
+
+sudo apt install hping3
+
+sudo apt install nmap
+
+sudo apt install tcpdump
+
+sudo apt install wireshark
+sudo usermod -G wireshark -a "${USER}"
+
+sudo apt install minicom lrzsz
+sudo chmod +s /usr/bin/minicom
+sudo tee /etc/minicom/minirc.dfl << EOF > /dev/null
+pu port             /dev/ttyS0
+pu baudrate         9600
+pu bits             8
+pu parity           N
+pu stopbits         1
+pu minit
+pu mreset
+pu rtscts           No
+EOF

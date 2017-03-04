@@ -15,7 +15,3 @@ brew install sqlmap
 brew install hashcat
 
 brew install proxychains-ng
-cp /usr/local/etc/proxychains.conf /usr/local/etc/proxychains.conf.default
-sed 's/^socks4.*9050/socks5 127.0.0.1 7070/' \
-	/usr/local/etc/proxychains.conf.default \
-	> /usr/local/etc/proxychains.conf

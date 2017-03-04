@@ -29,3 +29,9 @@ pu minit
 pu mreset
 pu rtscts           No
 EOF
+
+sudo apt install proxychains
+
+sudo apt install vpnc
+sudo apt install network-manager-vpnc
+sudo apt install network-manager-vpnc-gnome

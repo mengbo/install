@@ -1,5 +1,7 @@
 #!/bin/sh -v
 
+brew install telnet
+
 cat > ~/.telnetrc << EOF
 default unset autologin
 EOF

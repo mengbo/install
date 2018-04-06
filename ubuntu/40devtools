@@ -1,5 +1,6 @@
 #!/bin/sh -v
 
+sudo apt install libcanberra-gtk-module
 sudo apt install vim-gtk
 
 sudo apt install shellcheck

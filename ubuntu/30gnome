@@ -1,0 +1,8 @@
+#!/bin/sh -v
+
+sudo apt install gnome-backgrounds
+
+sudo apt install gnome-tweak-tool
+
+sudo apt install gnome-shell-extension-system-monitor
+

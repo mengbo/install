@@ -10,7 +10,7 @@ fi
 
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
-if [ "`id -u`" -eq 0 ]; then
+if [ "\`id -u\`" -eq 0 ]; then
     PATH="\$PATH:/root/bin"
 else
     PATH="\$HOME/bin:\$PATH"

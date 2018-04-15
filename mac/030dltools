@@ -3,7 +3,7 @@
 brew install wget
 brew install aria2
 
-brew install homebrew/boneyard/lftp
+brew install lftp
 mkdir -p ~/.lftp
 cat > ~/.lftp/rc << EOF
 set ftp:charset "GB18030"

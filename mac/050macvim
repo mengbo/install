@@ -2,3 +2,9 @@
 
 brew install editorconfig
 brew cask install macvim
+
+mkdir -p ~/bin
+ln -sf /Applications/MacVim.app/Contents/bin/view ~/bin/view
+ln -sf /Applications/MacVim.app/Contents/bin/vim ~/bin/vi
+ln -sf /Applications/MacVim.app/Contents/bin/vim ~/bin/vim
+ln -sf /Applications/MacVim.app/Contents/bin/vimdiff ~/bin/vimdiff

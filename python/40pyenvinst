@@ -13,6 +13,8 @@ git clone https://github.com/pyenv/pyenv-which-ext.git \
 
 mkdir -p ~/bin
 ln -sf ~/.pyenv/bin/pyenv ~/bin/pyenv
+ln -sf ~/.pyenv/plugins/pyenv-virtualenv/bin/pyenv-virtualenv-init \
+	~/bin/pyenv-virtualenv-init
 
 mkdir -p ~/.bashrc.d
 cat > ~/.bashrc.d/pyenv.bash << EOF

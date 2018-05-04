@@ -27,6 +27,7 @@ eval "\$(pyenv init -)"
 eval "\$(pyenv virtualenv-init -)"
 EOF
 
+mkdir -p ~/.profile.d
 cat > ~/.profile.d/pyenv.sh << EOF
 # For Pyenv/Homebrew Combination
 # https://github.com/yyuu/pyenv/issues/106

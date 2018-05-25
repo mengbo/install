@@ -20,6 +20,9 @@ if [ -d /opt/X11/bin ]; then
     PATH="\$PATH:/opt/X11/bin"
 fi
 
+# Ignore the permission issues and load the completion system normally.
+ZSH_DISABLE_COMPFIX=true
+
 if [ -d /etc/profile.d ]; then
     for i in /etc/profile.d/*.sh; do
         if [ -r \$i ]; then

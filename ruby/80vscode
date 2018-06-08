@@ -6,3 +6,4 @@ gem install debase
 gem install rubocop
 
 gem install rcodetools
+gem install solargraph

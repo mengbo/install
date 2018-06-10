@@ -1,9 +1,12 @@
 #!/bin/sh -v
 
+brew install lua python
+brew cask install macvim
+
 brew tap homebrew/cask-fonts
 brew cask install font-menlo-for-powerline
-brew install editorconfig
-brew cask install macvim
+
+brew install the_silver_searcher
 
 mkdir -p ~/bin
 ln -sf /Applications/MacVim.app/Contents/bin/view ~/bin/view

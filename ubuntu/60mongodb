@@ -1,5 +1,4 @@
 #!/bin/sh -v
 
-sudo apt update
 sudo apt install mongodb
 #/usr/bin/mongo --eval 'db.runCommand({ connectionStatus: 1 })'

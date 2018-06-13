@@ -1,9 +1,0 @@
-#!/bin/sh -v
-
-aptitude -y install python-software-properties
-
-add-apt-repository ppa:relan/exfat
-
-aptitude update
-
-aptitude -y install fuse-exfat exfat-utils

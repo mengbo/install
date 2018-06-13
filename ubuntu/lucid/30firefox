@@ -1,5 +1,0 @@
-#!/bin/sh -v
-
-add-apt-repository ppa:mozillateam/firefox-stable
-aptitude -y update
-aptitude -y upgrade

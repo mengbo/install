@@ -1,8 +1,0 @@
-#!/bin/sh -v
-
-aptitude -y install openjdk-7-jdk openjdk-7-doc openjdk-7-source
-cat > /etc/profile.d/java_options.sh << EOF
-#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
-EOF
-
-#aptitude -y install icedtea-7-plugin

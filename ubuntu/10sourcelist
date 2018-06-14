@@ -19,6 +19,7 @@ deb http://security.ubuntu.com/ubuntu $(lsb_release -cs)-security main multivers
 # deb-src ${MIRROR} $(lsb_release -cs)-proposed main multiverse restricted universe
 # deb http://archive.canonical.com/ubuntu $(lsb_release -cs) partner
 EOF
+# echo 'Acquire::ForceIPv4 "true";' | sudo tee /etc/apt/apt.conf.d/99force-ipv4
 sudo apt update
 sudo apt upgrade
 sudo apt full-upgrade

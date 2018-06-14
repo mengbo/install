@@ -1,6 +1,0 @@
-#!/bin/sh -v
-
-aptitude -y install openjdk-6-jdk openjdk-6-doc openjdk-6-source
-cat > /etc/profile.d/java_options.sh << EOF
-#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
-EOF

@@ -1,6 +1,15 @@
 #!/bin/sh -v
 
 brew cask install visual-studio-code
+
+
+# For VS Code
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
+# For VS Code Insider
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# If necessary, reset global default
+defaults delete -g ApplePressAndHoldEnabled
+
+

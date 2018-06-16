@@ -11,7 +11,8 @@ pyenv virtualenv $PY_VERSION $VENV
 pyenv shell $VENV
 pip install --upgrade pip
 pip install pipdeptree
-pip install pylint yapf flask
+pip install pylint
+pip install yapf
 pip install flask
 
 python -m pipdeptree

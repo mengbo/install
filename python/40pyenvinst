@@ -11,10 +11,10 @@ git clone git://github.com/yyuu/pyenv-update.git \
 git clone https://github.com/pyenv/pyenv-which-ext.git \
 	~/.pyenv/plugins/pyenv-which-ext
 
-mkdir -p ~/bin
-ln -sf ~/.pyenv/bin/pyenv ~/bin/pyenv
-ln -sf ~/.pyenv/plugins/pyenv-virtualenv/bin/pyenv-virtualenv-init \
-	~/bin/pyenv-virtualenv-init
+#mkdir -p ~/bin
+#ln -sf ~/.pyenv/bin/pyenv ~/bin/pyenv
+#ln -sf ~/.pyenv/plugins/pyenv-virtualenv/bin/pyenv-virtualenv-init \
+#	~/bin/pyenv-virtualenv-init
 
 mkdir -p ~/.bashrc.d
 cat > ~/.bashrc.d/pyenv.bash << EOF

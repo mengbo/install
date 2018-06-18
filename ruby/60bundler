@@ -1,5 +1,9 @@
 #!/bin/bash
 
+gem sources \
+	--add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ \
+	--remove https://rubygems.org/
+
 gem install bundler
 
 bundle config --global path vendor/bundler

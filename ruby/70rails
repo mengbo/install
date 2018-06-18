@@ -1,0 +1,4 @@
+#!/bin/bash -v
+
+mkdir -p ~/bin
+ln -sf "$PWD"/rails.bundle ~/bin

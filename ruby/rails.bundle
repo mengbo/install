@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ "$1" != "new" ]; then
+	echo "Usage:"
+	echo "  $(basename $0) new APP_PATH [options]"
+	exit 1
+fi
+
+mkdir "$2" && cd "$2" && shift 2 &&
+	echo "source 'https://rubygems.org'" > Gemfile &&
+	echo "gem 'rails'" >> Gemfile &&
+	bundle install --path vendor/bundle &&
+	bundle exec rails new . --force --skip-bundle "$@" &&
+	bundle update

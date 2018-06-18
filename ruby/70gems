@@ -11,3 +11,5 @@
 #	popd
 #}
 #gem install rmagick
+
+gem install pry

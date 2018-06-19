@@ -1,6 +1,5 @@
 #!/bin/sh -v
 
-
 sudo add-apt-repository ppa:webupd8team/java
 sudo add-apt-repository ppa:linuxuprising/java
 sudo apt update
@@ -12,3 +11,5 @@ sudo apt install oracle-java10-installer
 sudo apt purge oracle-java8-set-default
 sudo apt purge oracle-java10-set-default
 
+
+sudo apt install gradle maven

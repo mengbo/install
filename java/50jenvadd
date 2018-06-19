@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
-jenv add "$(/usr/libexec/java_home -v 10.0)"
-jenv add "$(/usr/libexec/java_home -v 1.8)"
+for java_dir in /usr/lib/jvm/*; do
+	jenv add "$java_dir"
+done
+
+if [ -x /usr/libexec/java_home ]; then
+	jenv add "$(/usr/libexec/java_home -v 10.0)"
+	jenv add "$(/usr/libexec/java_home -v 1.8)"
+fi
+
 jenv global 10.0

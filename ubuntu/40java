@@ -1,0 +1,14 @@
+#!/bin/sh -v
+
+
+sudo add-apt-repository ppa:webupd8team/java
+sudo add-apt-repository ppa:linuxuprising/java
+sudo apt update
+
+sudo apt install oracle-java8-installer
+sudo apt install oracle-java10-installer
+
+# Purge set-default for jenv
+sudo apt purge oracle-java8-set-default
+sudo apt purge oracle-java10-set-default
+

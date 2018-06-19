@@ -1,0 +1,12 @@
+#!/bin/sh
+
+
+git clone https://github.com/gcuisinier/jenv.git ~/.jenv
+
+mkdir -p ~/.profile.d
+cat > ~/.profile.d/jenv.sh << EOF
+export PATH="\$HOME/.jenv/bin:\$PATH"
+eval "\$(jenv init -)"
+EOF
+
+echo "Restart your shell so that PATH changes take effect."

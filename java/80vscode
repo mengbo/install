@@ -1,0 +1,3 @@
+#!/bin/sh -v
+
+code --install-extension vscjava.vscode-java-pack

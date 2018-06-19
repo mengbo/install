@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+jenv add "$(/usr/libexec/java_home -v 10.0)"
+jenv add "$(/usr/libexec/java_home -v 1.8)"
+jenv global 10.0

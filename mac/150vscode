@@ -2,14 +2,17 @@
 
 brew cask install visual-studio-code
 
+code --install-extension MS-CEINTL.vscode-language-pack-zh-hans
 
+#code --install-extension christian-kohler.path-intellisense
+code --install-extension ionutvmi.path-autocomplete
+
+code --install-extension vscodevim.vim
 # For VS Code
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-
 # For VS Code Insider
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
-
 # If necessary, reset global default
-defaults delete -g ApplePressAndHoldEnabled
+#defaults delete -g ApplePressAndHoldEnabled
 
-
+#code --install-extension ms-vscode.cpptools

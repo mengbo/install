@@ -7,3 +7,6 @@ gem install rubocop
 
 gem install rcodetools
 gem install solargraph
+
+code --install-extension rebornix.Ruby
+code --install-extension castwide.solargraph

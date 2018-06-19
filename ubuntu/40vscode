@@ -6,3 +6,13 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode s
 
 sudo apt update
 sudo apt install code
+
+
+code --install-extension MS-CEINTL.vscode-language-pack-zh-hans
+
+#code --install-extension christian-kohler.path-intellisense
+code --install-extension ionutvmi.path-autocomplete
+
+code --install-extension vscodevim.vim
+
+#code --install-extension ms-vscode.cpptools

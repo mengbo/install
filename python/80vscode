@@ -1,0 +1,3 @@
+#!/bin/sh -v
+
+code --install-extension ms-python.python

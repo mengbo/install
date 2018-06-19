@@ -1,0 +1,20 @@
+#!/bin/bash
+
+eval "$(pyenv init -)"
+
+PipInstall(){
+	PY_VERSION=$1
+
+	pyenv shell "${PY_VERSION}"
+	pip install --upgrade pip
+	pip install pipdeptree
+	#pip install pylint
+	#pip install yapf
+	python -m pipdeptree
+	pyenv shell --unset
+}
+
+PipInstall 2.7.13
+
+PipInstall 3.6.0
+

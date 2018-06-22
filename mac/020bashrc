@@ -42,7 +42,7 @@ if [ -d ~/.profile.d ]; then
 fi
 
 # Load ~/.bashrc.d/*.bash
-if [ -d ~/.bashrc.d/*.bash ]; then
+if [ -d ~/.bashrc.d ]; then
     for i in ~/.bashrc.d/*.bash; do
         if [ -r \$i ]; then
             source \$i

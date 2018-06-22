@@ -5,8 +5,13 @@ git clone https://github.com/gcuisinier/jenv.git ~/.jenv
 
 mkdir -p ~/.profile.d
 cat > ~/.profile.d/jenv.sh << EOF
+shell="\$(ps -p "\$$" -o 'args=' 2>/dev/null || true)"
+shell="\${shell%% *}"
+shell="\${shell##-}"
+shell="\${shell:-\$SHELL}"
+shell="\${shell##*/}"
 export PATH="\$HOME/.jenv/bin:\$PATH"
-eval "\$(jenv init -)"
+eval "\$(jenv init - \$shell)"
 EOF
 
 echo "Restart your shell so that PATH changes take effect."

@@ -1,6 +1,6 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
-eval "$(jenv init -)"
+eval "$(jenv init - bash)"
 
 jenv enable-plugin export
 

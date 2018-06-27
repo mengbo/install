@@ -1,0 +1,19 @@
+#!/bin/sh -v
+
+# For the bug in one of the ebtables support script.
+# sudo cp -p /bin/true /sbin/ebtables
+
+umask 0022
+mkdir -p ~/.profile.d
+cat > ~/.profile.d/wsl.sh << EOF
+#Fix mkdir command has wrong permissions
+if grep -q Microsoft /proc/version; then
+    if [[ "\$(umask)" == '000' ]]; then
+	umask 0022
+    fi
+    export DISPLAY=:0.0
+fi
+EOF
+
+
+echo "Restart your shell so that umask changes take effect."

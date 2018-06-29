@@ -73,6 +73,12 @@ cat >> ~/.zshrc.d/oh-my-zsh.zsh << EOF
 plugins+=(zsh-autosuggestions)
 
 EOF
+test "$(uname)" = "Linux" &&
+    grep -q Microsoft /proc/version &&
+    cat > ~/.oh-my-zsh/custom/zsh-autosuggestions-config.zsh << EOF
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
+
+EOF
 
 git clone git://github.com/zsh-users/zsh-completions \
 	~/.oh-my-zsh/custom/plugins/zsh-completions

@@ -1,0 +1,9 @@
+#!/bin/sh -v
+
+mkdir -p ~/.profile.d
+wget -O ~/.dir_colors \
+    https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark
+cat > ~/.profile.d/dircolors.sh << EOF
+eval \`dircolors ~/.dir_colors\`
+EOF
+

@@ -1,8 +1,6 @@
 #!/bin/sh -v
 
 sudo apt install zsh
-sudo apt install thefuck
-sudo apt install terminator
 chsh -s /usr/bin/zsh
 
 sudo apt install sysstat

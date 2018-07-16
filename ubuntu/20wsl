@@ -12,6 +12,7 @@ if grep -q Microsoft /proc/version; then
 	umask 0022
     fi
     export DISPLAY=:0.0
+    export DOCKER_HOST=tcp://127.0.0.1:2375
 
     # https://github.com/rupor-github/ssh-agent-wsl
     eval "\$(ssh-agent-wsl -r -H /mnt/c/Windows/System32/pipe-connector.exe)" > /dev/null

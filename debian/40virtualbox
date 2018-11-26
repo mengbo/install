@@ -1,0 +1,6 @@
+#!/bin/sh -v
+
+sudo apt install virtualbox
+sudo apt install virtualbox-ext-pack
+
+sudo usermod -G vboxusers -a "${USER}"

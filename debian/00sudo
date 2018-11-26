@@ -1,0 +1,6 @@
+#!/bin/sh -v
+
+SUSER=mengbo
+
+usermod -G sudo -a "$SUSER"
+

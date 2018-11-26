@@ -1,0 +1,5 @@
+#!/bin/sh -v
+
+sudo apt install network-manager-vpnc-gnome
+
+sudo apt install network-manager-l2tp-gnome

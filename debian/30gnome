@@ -2,7 +2,8 @@
 
 sudo apt install gnome-backgrounds
 
-sudo apt install gnome-tweak-tool
-
 sudo apt install gnome-shell-extension-system-monitor
+#gnome-shell-extension-prefs
 
+sudo apt install gnome-tweaks
+gnome-tweaks

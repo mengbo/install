@@ -1,12 +1,6 @@
 #!/bin/sh -v
 
-sudo apt install libcanberra-gtk-module
-sudo apt install vim-gtk
-cat > ~/bin/gvim << EOF
-#!/bin/sh
-LC_CTYPE=en_US.UTF-8 /usr/bin/gvim "\$@"
-EOF
-chmod +x ~/bin/gvim
+sudo apt install vim-gtk3
 
 sudo apt install silversearcher-ag
 

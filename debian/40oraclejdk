@@ -1,0 +1,13 @@
+#!/bin/sh -v
+
+JDKURL="https://download.oracle.com/otn-pub/java/jdk/11.0.1+13/90cf5d8f270a4347a95050320eef3fb7/jdk-11.0.1_linux-x64_bin.deb"
+
+(cd /tmp && 
+curl -LO -H "Cookie: oraclelicense=accept-securebackup-cookie" "$JDKURL")
+
+sudo dpkg -i /tmp/jdk-11.0.1_linux-x64_bin.deb
+
+sudo sh -c 'cat > /etc/profile.d/jdk.sh << EOF
+export JAVA_HOME=/usr/lib/jvm/jdk-11.0.1/
+export PATH=\$PATH:\$JAVA_HOME/bin
+EOF'

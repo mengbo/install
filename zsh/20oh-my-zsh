@@ -74,7 +74,6 @@ plugins+=(zsh-autosuggestions)
 
 EOF
 test "$(uname)" = "Linux" &&
-    grep -q Microsoft /proc/version &&
     cat > ~/.oh-my-zsh/custom/zsh-autosuggestions-config.zsh << EOF
 # https://github.com/Microsoft/console/pull/181
 #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'

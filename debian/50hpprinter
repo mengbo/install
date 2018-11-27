@@ -1,0 +1,8 @@
+#!/bin/sh -v
+
+sudo apt install hplip
+
+sudo systemctl enable cups
+sudo systemctl start cups
+
+#sudo hp-probe

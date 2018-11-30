@@ -8,11 +8,20 @@ code --install-extension MS-CEINTL.vscode-language-pack-zh-hans
 code --install-extension ionutvmi.path-autocomplete
 
 code --install-extension vscodevim.vim
+# https://github.com/VSCodeVim/Vim
 # For VS Code
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 # For VS Code Insider
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
 # If necessary, reset global default
 #defaults delete -g ApplePressAndHoldEnabled
+
+# Disable input method when exiting Insert Mode.
+curl -Ls https://raw.githubusercontent.com/daipeihust/im-select/master/install_mac.sh | sh
+# Given default input method key of com.apple.keylayout.US and im-select saved to the default location. The configuration is:
+#"vim.autoSwitchInputMethod.enable": true,
+#"vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
+#"vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
+#"vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}"
 
 #code --install-extension ms-vscode.cpptools

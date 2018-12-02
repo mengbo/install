@@ -1,0 +1,4 @@
+#!/bin/sh -v
+
+# https://github.com/JElchison/format-udf
+sudo apt install udftools coreutils vim-common

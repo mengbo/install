@@ -6,6 +6,11 @@ chsh -s /usr/bin/zsh
 sudo apt install sysstat
 
 sudo apt install screen
+cat > ~/.screenrc << EOF
+startup_message off
+defscrollback 10240
+termcapinfo xterm*|xterms*|xs*|rxvt* ti@:te@
+EOF
 
 sudo apt install rsync
 

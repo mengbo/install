@@ -1,0 +1,9 @@
+#!/bin/sh -v
+
+brew install screen lrzsz
+cat > ~/.screenrc << EOF
+startup_message off
+defscrollback 10240
+termcapinfo xterm*|xterms*|xs*|rxvt* ti@:te@
+EOF
+

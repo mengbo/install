@@ -5,8 +5,8 @@ for java_dir in /usr/lib/jvm/*; do
 done
 
 if [ -x /usr/libexec/java_home ]; then
-	jenv add "$(/usr/libexec/java_home -v 10.0)"
+	jenv add "$(/usr/libexec/java_home -v 11.0)"
 	jenv add "$(/usr/libexec/java_home -v 1.8)"
 fi
 
-jenv global 10.0
+jenv global 11.0

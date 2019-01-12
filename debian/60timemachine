@@ -20,6 +20,7 @@ cat << EOF | sudo tee /etc/samba/smb.conf
    passwd program = /usr/bin/passwd %u
    passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
    pam password change = yes
+   socket options = IPTOS_LOWDELAY TCP_NODELAY
 
 [TimeMachine]
    comment = Time Machine

@@ -9,7 +9,7 @@ cat > ~/.profile.d/wsl.sh << EOF
 #Fix mkdir command has wrong permissions
 if grep -q Microsoft /proc/version; then
     umask 0022
-    export DISPLAY=:0.0
+    export DISPLAY=localhost:0.0
     export DOCKER_HOST=tcp://127.0.0.1:2375
 
     # https://github.com/rupor-github/ssh-agent-wsl

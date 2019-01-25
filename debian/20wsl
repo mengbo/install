@@ -8,9 +8,7 @@ mkdir -p ~/.profile.d
 cat > ~/.profile.d/wsl.sh << EOF
 #Fix mkdir command has wrong permissions
 if grep -q Microsoft /proc/version; then
-    if [[ "\$(umask)" == '000' ]]; then
-	umask 0022
-    fi
+    umask 0022
     export DISPLAY=:0.0
     export DOCKER_HOST=tcp://127.0.0.1:2375
 

@@ -7,6 +7,7 @@ PipInstall(){
 
 	pyenv shell "${PY_VERSION}"
 	pip install --upgrade pip
+	pip install pipenv
 	pip install pipdeptree
 	#pip install pylint
 	#pip install yapf
@@ -17,4 +18,9 @@ PipInstall(){
 PipInstall 2.7.13
 
 PipInstall 3.6.0
+
+mkdir -p ~/.profile.d
+cat > ~/.profile.d/pipenv.sh << EOF
+eval "\$(pipenv --completion)"
+EOF
 

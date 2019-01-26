@@ -12,5 +12,6 @@ source $HOME/.nvm/nvm.sh
 run nvm install --lts
 run nvm alias default lts/*
 run nvm use default
+run npm config set registry https://registry.npm.taobao.org
 run npm install -g yarn
 run yarn config set registry https://registry.npm.taobao.org

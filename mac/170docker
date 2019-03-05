@@ -2,6 +2,6 @@
 
 brew cask install docker
 
-brew tap homebrew/completions
+#brew tap homebrew/completions
 brew install docker-completion
 brew install docker-compose-completion

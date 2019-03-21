@@ -6,4 +6,10 @@ sudo apt install gnome-shell-extension-system-monitor
 #gnome-shell-extension-prefs
 
 sudo apt install gnome-tweaks
-gnome-tweaks
+#gnome-tweaks
+
+# Disable GDM auto-suspend
+# https://wiki.archlinux.org/index.php/GDM#GDM_auto-suspend_.28GNOME_3.28.29
+#sudo -u Debian-gdm dbus-launch gsettings set \
+#	org.gnome.settings-daemon.plugins.power \
+#	sleep-inactive-ac-type 'nothing'

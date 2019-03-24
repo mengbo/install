@@ -23,6 +23,7 @@ sudo apt install unrar
 sudo apt install p7zip
 
 sudo apt install curl
+sudo apt install libcurl4-gnutls-dev
 
 sudo apt install wget
 

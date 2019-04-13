@@ -1,0 +1,6 @@
+#!/bin/sh -v
+
+XMINDDEB="https://www.xmind.cn/xmind/downloads/XMind-ZEN-for-Linux-64bit.deb"
+wget -c -O /tmp/XMind-ZEN-for-Linux-64bit.deb "$XMINDDEB"
+sudo dpkg -i /tmp/XMind-ZEN-for-Linux-64bit.deb
+sudo apt --fix-broken install

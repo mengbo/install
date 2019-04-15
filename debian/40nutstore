@@ -1,0 +1,6 @@
+#!/bin/sh -v
+
+NUTDEB="https://www.jianguoyun.com/static/exe/installer/debian/nautilus_nutstore_amd64.deb"
+wget -c -O /tmp/nautilus_nutstore_amd64.deb "$NUTDEB"
+sudo dpkg -i /tmp/nautilus_nutstore_amd64.deb
+sudo apt --fix-broken install

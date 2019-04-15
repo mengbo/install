@@ -1,4 +1,4 @@
 #!/bin/sh -v
 
-brew cask reinstall nutstore
+brew cask install nutstore
 #open /usr/local/Caskroom/nutstore/latest/坚果云安装程序.app

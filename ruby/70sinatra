@@ -1,0 +1,25 @@
+#!/bin/bash -v
+
+mkdir -p ~/tmp/sinatra-demo
+cd ~/tmp/sinatra-demo
+
+bundle init
+cat > Gemfile << EOF
+source "https://gems.ruby-china.com"
+gem "sinatra"
+EOF
+bundle install
+
+cat > myapp.rb << EOF
+# myapp.rb
+require 'sinatra'
+
+get '/' do
+  'Hello world!'
+end
+EOF
+
+bundle exec ruby myapp.rb
+
+#rm -rf ~/tmp/sinatra-demo
+

@@ -1,0 +1,22 @@
+#!/bin/bash -v
+
+mkdir -p ~/tmp/koa-demo
+cd ~/tmp/koa-demo
+
+npm install koa
+
+cat > my-koa-app.js << EOF
+const Koa = require('koa');
+const app = new Koa();
+
+app.use(async ctx => {
+  ctx.body = 'Hello World';
+});
+
+app.listen(3000);
+EOF
+
+node my-koa-app.js
+
+#rm -rf ~/tmp/koa-demo
+

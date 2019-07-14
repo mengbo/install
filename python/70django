@@ -1,0 +1,20 @@
+#!/bin/bash
+
+PY_VERSION=3.6.0
+VENV=django
+
+eval "$(pyenv init -)"
+
+pyenv uninstall $VENV
+pyenv virtualenv $PY_VERSION $VENV
+
+pyenv shell $VENV
+pip install --upgrade pip
+pip install pipdeptree
+pip install django
+
+python -m pipdeptree
+
+#cd the_project_root
+#pyenv local --unset
+#pyenv local $VENV

@@ -1,15 +1,3 @@
 #!/bin/bash
 
-#[ `which aptitude` ] && run sudo aptitude -y install imagemagick libmagick9-dev
-#[ `which brew` ] && run brew install imagemagick
-# https://github.com/rmagick/rmagick/issues/60
-#[ `which brew` ] && {
-#	push /usr/local/Cellar/imagemagick/6.8.0-10/lib
-#	ln -s libMagick++-Q16.7.dylib   libMagick++.dylib
-#	ln -s libMagickCore-Q16.7.dylib libMagickCore.dylib
-#	ln -s libMagickWand-Q16.7.dylib libMagickWand.dylib
-#	popd
-#}
-#gem install rmagick
-
 gem install pry

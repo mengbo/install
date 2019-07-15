@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# mkdir -p ~/bin
+# ln -sf "$PWD"/rails.bundle ~/bin
+
 if [ "$1" != "new" ]; then
 	echo "Usage:"
 	echo "  $(basename $0) new APP_PATH [options]"
@@ -7,7 +10,7 @@ if [ "$1" != "new" ]; then
 fi
 
 mkdir "$2" && cd "$2" && shift 2 &&
-	echo "source 'https://rubygems.org'" > Gemfile &&
+	echo "source 'https://gems.ruby-china.com'" > Gemfile &&
 	echo "gem 'rails'" >> Gemfile &&
 	bundle install --path vendor/bundle &&
 	bundle exec rails new . --force --skip-bundle "$@" &&

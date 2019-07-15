@@ -9,15 +9,15 @@ PipInstall(){
 	pip install --upgrade pip
 	pip install pipenv
 	pip install pipdeptree
-	#pip install pylint
-	#pip install yapf
 	python -m pipdeptree
 	pyenv shell --unset
 }
 
-PipInstall 2.7.13
+PY2_VERSION="$(pyenv global | grep '^2')"   
+PipInstall $PY2_VERSION
 
-PipInstall 3.6.0
+PY3_VERSION="$(pyenv global | grep '^3')"   
+PipInstall $PY3_VERSION
 
 mkdir -p ~/.profile.d
 cat > ~/.profile.d/pipenv.sh << EOF

@@ -1,4 +1,18 @@
-#!/bin/bash -v
+#!/bin/bash
 
-mkdir -p ~/bin
-ln -sf "$PWD"/rails.bundle ~/bin
+eval "$(rbenv init -)"
+
+GEMSET=rails
+RB_VERSION="$(rbenv global)"
+
+rbenv gemset delete "$RB_VERSION" "$GEMSET"
+rbenv gemset create "$RB_VERSION" "$GEMSET"
+
+RBENV_GEMSETS=$GEMSET gem install rails
+
+#cd ~/tmp
+#RBENV_GEMSETS=rails rails new rails-demo
+#cd rails-demo
+#rbenv gemset init rails
+#rails server
+

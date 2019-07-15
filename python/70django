@@ -1,20 +1,26 @@
 #!/bin/bash
 
-PY_VERSION=3.6.0
-VENV=django
-
 eval "$(pyenv init -)"
 
+VENV=django
+PY_VERSION="$(pyenv global | grep '^3')"
+
 pyenv uninstall $VENV
-pyenv virtualenv $PY_VERSION $VENV
+pyenv virtualenv "$PY_VERSION" "$VENV"
 
 pyenv shell $VENV
 pip install --upgrade pip
+pip install pipenv
 pip install pipdeptree
-pip install django
-
 python -m pipdeptree
 
-#cd the_project_root
+pip install django
+python -m pipdeptree
+
+#cd ~/tmp
+#pyenv activate django
+#django-admin startproject DjangoDemo
+#cd DjangoDemo
 #pyenv local --unset
 #pyenv local $VENV
+#python manage.py runserver

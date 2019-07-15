@@ -4,10 +4,17 @@
 # https://github.com/yyuu/pyenv/wiki
 # https://github.com/pyenv/pyenv/wiki/Common-build-problems
 
-pyenv install 2.7.13
+eval "$(pyenv init -)"
 
-pyenv install 3.6.0
+pyenv update
 
-pyenv install anaconda3-5.1.0
+PY2_VERSION="$(pyenv install -l | grep '^ *2.' | grep -v dev | tail -1)"
+pyenv install $PY2_VERSION
 
-pyenv global 3.6.0 2.7.13
+PY3_VERSION="$(pyenv install -l | grep '^ *3.' | grep -v dev | tail -1)"
+pyenv install $PY3_VERSION
+
+CONDA_VERSION="$(pyenv install -l | grep anaconda | tail -1)"
+pyenv install $CONDA_VERSION
+
+pyenv global $PY3_VERSION $PY2_VERSION

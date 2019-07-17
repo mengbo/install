@@ -3,6 +3,8 @@
 # Please see the pyenv wiki for solutions to common problems.
 # https://github.com/yyuu/pyenv/wiki
 # https://github.com/pyenv/pyenv/wiki/Common-build-problems
+# For linux: sudo apt install tk-dev
+# For macOS: brew install tcl-tk
 
 eval "$(pyenv init -)"
 

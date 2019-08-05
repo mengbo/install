@@ -1,15 +1,6 @@
 #!/bin/sh -v
 
-WPSDEB="https://wdl1.cache.wps.cn/wps/download/ep/Linux2019/8392/wps-office_11.1.0.8392_amd64.deb"
+WPSDEB=`curl https:/linux.wps.cn/\# | grep amd64.deb | sed -e 's/^.*"https/https/' -e 's/amd64.deb".*$/amd64.deb/'`
 wget -c -O /tmp/wps-office.deb "$WPSDEB"
 sudo dpkg -i /tmp/wps-office.deb
 #rm /tmp/wps-office.deb
-
-git clone https://github.com/IamDH4/ttf-wps-fonts.git /tmp/ttf-wps-fonts
-(cd /tmp/ttf-wps-fonts && sudo ./install.sh)
-#rm -rf /tmp/ttf-wps-fonts
-
-FONTSDEB="http://kdl.cc.ksosoft.com/wps-community/download/fonts/wps-office-fonts_1.0_all.deb"
-wget -c -O /tmp/wps-office-fonts.deb "$FONTSDEB"
-sudo dpkg -i /tmp/wps-office-fonts.deb
-#rm /tmp/wps-office-fonts.deb

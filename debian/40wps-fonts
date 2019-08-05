@@ -1,0 +1,10 @@
+#!/bin/sh -v
+
+git clone https://github.com/IamDH4/ttf-wps-fonts.git /tmp/ttf-wps-fonts
+(cd /tmp/ttf-wps-fonts && sudo ./install.sh)
+#rm -rf /tmp/ttf-wps-fonts
+
+FONTSDEB="http://kdl.cc.ksosoft.com/wps-community/download/fonts/wps-office-fonts_1.0_all.deb"
+wget -c -O /tmp/wps-office-fonts.deb "$FONTSDEB"
+sudo dpkg -i /tmp/wps-office-fonts.deb
+#rm /tmp/wps-office-fonts.deb

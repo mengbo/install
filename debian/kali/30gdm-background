@@ -1,0 +1,50 @@
+#!/bin/sh
+
+sudo apt reinstall gnome-shell-common
+
+gst=/usr/share/gnome-shell/gnome-shell-theme.gresource
+workdir=./shell-theme
+
+rm -rf $workdir
+
+for r in `gresource list $gst`; do
+	r=${r#\/org\/gnome\/shell/}
+	if [ ! -d $workdir/${r%/*} ]; then
+	  mkdir -p $workdir/${r%/*}
+	fi
+done
+
+for r in `gresource list $gst`; do
+        gresource extract $gst $r >$workdir/${r#\/org\/gnome\/shell/}
+done
+
+
+cd $workdir/theme || exit
+
+
+cp /usr/share/images/desktop-base/login-background.svg login-background.svg
+
+
+cat > gnome-shell-theme.gresource.xml << EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/gnome/shell/theme">
+EOF
+
+for i in $(find * -type f ! -name *.xml); do
+	echo "    <file>$i</file>" >> gnome-shell-theme.gresource.xml
+done
+
+cat >> gnome-shell-theme.gresource.xml << EOF
+  </gresource>
+</gresources>
+EOF
+
+
+sed -i "s#noise-texture.png#login-background.svg#" ./*.css
+sed -i "s/ repeat;/ no-repeat;\n  background-size: cover;\n  background-position: center;/" \
+  ./*.css
+
+sudo apt install libglib2.0-dev-bin
+glib-compile-resources gnome-shell-theme.gresource.xml
+sudo cp gnome-shell-theme.gresource $gst

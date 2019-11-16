@@ -16,5 +16,11 @@ code --install-extension MS-CEINTL.vscode-language-pack-zh-hans
 code --install-extension ionutvmi.path-autocomplete
 
 code --install-extension vscodevim.vim
+# Disable input method when exiting Insert Mode.
+# Must Configure vim.autoSwitchInputMethod.
+#"vim.autoSwitchInputMethod.enable": true,
+#"vim.autoSwitchInputMethod.defaultIM": "xkb:us::eng",
+#"vim.autoSwitchInputMethod.obtainIMCmd": "/usr/bin/ibus engine",
+#"vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/ibus engine {im}; /usr/bin/ibus engine"
 
 #code --install-extension ms-vscode.cpptools

@@ -7,6 +7,7 @@ cat > ~/.zshrc.d/oh-my-zsh.zsh << EOF
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="ys"
 plugins=(command-not-found git vi-mode)
+plugins+=(ripgrep fzf)
 plugins+=(nvm node npm yarn)
 plugins+=(pyenv python pip)
 plugins+=(rbenv ruby gem bundler)

@@ -1,0 +1,13 @@
+#!/bin/sh -v
+
+sudo apt install fzf
+sudo ln -sf /usr/share/doc/fzf/examples/completion.zsh \
+	/usr/share/zsh/vendor-completions/_fzf
+
+sudo apt install ripgrep
+
+cat > ~/.profile.d/fzf.sh << EOF
+export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+EOF
+

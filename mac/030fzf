@@ -1,0 +1,9 @@
+#!/bin/sh -v
+
+brew install ripgrep
+brew install fzf
+
+cat > ~/.profile.d/fzf.sh << EOF
+export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+EOF

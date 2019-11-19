@@ -5,9 +5,27 @@ sudo ln -sf /usr/share/doc/fzf/examples/completion.zsh \
 	/usr/share/zsh/vendor-completions/_fzf
 
 sudo apt install ripgrep
+sudo apt install highlight
 
 cat > ~/.profile.d/fzf.sh << EOF
-export FZF_DEFAULT_COMMAND='rg --files'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_COMMAND="rg --files"
+export FZF_CTRL_T_COMMAND="\$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--inline-info --preview='fzf-previewer {}'"
 EOF
 
+cat > ~/bin/fzf-previewer << EOF
+#!/bin/sh
+
+FT=\$(file -b "\$1") || "\$1"
+
+case "\${FT}" in
+	*"text"*)
+		highlight -O ansi "\$1"
+		;;
+	*"No such file or directory"*)
+		echo "\$1"
+		;;
+	*)
+		echo "\$FT"
+esac
+EOF

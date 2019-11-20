@@ -4,13 +4,22 @@ sudo apt install fzf
 sudo ln -sf /usr/share/doc/fzf/examples/completion.zsh \
 	/usr/share/zsh/vendor-completions/_fzf
 
-sudo apt install ripgrep
-sudo apt install highlight
+sudo apt install fd-find ripgrep
 
 cat > ~/.profile.d/fzf.sh << EOF
-export FZF_DEFAULT_COMMAND="rg --files"
+export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="\$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--inline-info --preview='fzf-previewer {}'"
+
+_fzf_compgen_path() {
+  #fd --hidden --follow --exclude ".git" . "\$1"
+  fd --follow . "\$1"
+}
+
+_fzf_compgen_dir() {
+  #fd --type d --hidden --follow --exclude ".git" . "\$1"
+  fd --type d --follow . "\$1"
+}
 EOF
 
 cat > ~/bin/fzf-previewer << EOF
@@ -20,8 +29,7 @@ FT=\$(file -b "\$1") || "\$1"
 
 case "\${FT}" in
     *"text"*)
-        (highlight -O ansi "\$1" ||
-            cat "\$1") 2> /dev/null | head -500
+        head -100 "\$1"
         ;;
     *"No such file or directory"*)
         echo "\$1"

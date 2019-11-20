@@ -8,16 +8,6 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="\$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--inline-info"
 export FZF_CTRL_T_OPTS="--inline-info --preview='fzf-previewer {}'"
-
-_fzf_compgen_path() {
-  #fd --hidden --follow --exclude ".git" . "\$1"
-  fd --follow . "\$1"
-}
-
-_fzf_compgen_dir() {
-  #fd --type d --hidden --follow --exclude ".git" . "\$1"
-  fd --type d --follow . "\$1"
-}
 EOF
 
 cat > ~/bin/fzf-previewer << EOF

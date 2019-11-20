@@ -16,13 +16,14 @@ cat > ~/bin/fzf-previewer << EOF
 FT=\$(file -b "\$1") || "\$1"
 
 case "\${FT}" in
-	*"text"*)
-		highlight -O ansi "\$1"
-		;;
-	*"No such file or directory"*)
-		echo "\$1"
-		;;
-	*)
-		echo "\$FT"
+    *"text"*)
+        (highlight -O ansi "\$1" ||
+            cat "\$1") 2> /dev/null | head -500
+        ;;
+    *"No such file or directory"*)
+        echo "\$1"
+        ;;
+    *)
+        echo "\$FT"
 esac
 EOF

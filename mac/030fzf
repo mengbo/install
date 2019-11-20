@@ -6,7 +6,8 @@ brew install fzf
 cat > ~/.profile.d/fzf.sh << EOF
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="\$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_OPTS="--inline-info --preview='fzf-previewer {}'"
+export FZF_DEFAULT_OPTS="--inline-info"
+export FZF_CTRL_T_OPTS="--inline-info --preview='fzf-previewer {}'"
 
 _fzf_compgen_path() {
   #fd --hidden --follow --exclude ".git" . "\$1"

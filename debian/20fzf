@@ -7,6 +7,7 @@ sudo ln -sf /usr/share/doc/fzf/examples/completion.zsh \
 sudo apt install fd-find ripgrep
 
 cat > ~/.profile.d/fzf.sh << EOF
+export PATH=/usr/lib/cargo/bin/:$PATH
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="\$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--inline-info --preview='fzf-previewer {}'"
@@ -38,3 +39,4 @@ case "\${FT}" in
         echo "\$FT"
 esac
 EOF
+chmod +x ~/bin/fzf-previewer

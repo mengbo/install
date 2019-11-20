@@ -35,3 +35,4 @@ case "\${FT}" in
         echo "\$FT"
 esac
 EOF
+chmod +x ~/bin/fzf-previewer

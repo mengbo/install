@@ -1,6 +1,6 @@
 #!/bin/sh -v
 
-sudo apt install docker.io
+sudo apt install docker.io docker-compose
 
 
 # Add the docker group if it doesn't already exist.

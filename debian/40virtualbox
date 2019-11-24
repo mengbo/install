@@ -5,4 +5,5 @@ sudo apt install virtualbox-ext-pack
 sudo usermod -G vboxusers -a "${USER}"
 
 sudo apt install vagrant
+#vagrant plugin install winrm winrm-elevated winrm-fs
 

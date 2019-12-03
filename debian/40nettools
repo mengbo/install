@@ -31,3 +31,5 @@ pu rtscts           No
 EOF
 
 sudo apt install proxychains
+
+sudo apt install ansible

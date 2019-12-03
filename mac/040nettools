@@ -15,3 +15,5 @@ brew install sqlmap
 brew install hashcat
 
 brew install proxychains-ng
+
+brew install ansible

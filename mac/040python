@@ -1,0 +1,4 @@
+#!/bin/sh -v
+
+brew install python pipenv
+brew install jupyterlab

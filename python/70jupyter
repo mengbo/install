@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#apt install jupyter || brew install jupyter
+
+mkdir -p ~/tmp/jupyter-demo
+cd ~/tmp/jupyter-demo
+
+pipenv --python 3
+pipenv install ipykernel
+pipenv run python3 -m ipykernel install --user --name "$(basename "$PWD")"
+
+pipenv install numpy pandas matplotlib
+
+#jupyter kernelspec remove "$(basename "$PWD")"
+#pipenv --rm
+#rm -rf ~/tmp/jupyter-demo

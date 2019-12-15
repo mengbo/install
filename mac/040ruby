@@ -1,0 +1,4 @@
+#!/bin/sh -v
+
+brew install ruby
+echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.profile.d/ruby.sh

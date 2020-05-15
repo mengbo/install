@@ -8,7 +8,7 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="ys"
 plugins=(command-not-found git vi-mode)
 plugins+=(ripgrep fzf)
-plugins+=(nvm node npm yarn)
+plugins+=(nvm node npm yarn deno)
 plugins+=(pyenv python pip)
 plugins+=(rbenv ruby gem bundler)
 plugins+=(docker docker-compose vagrant)
@@ -47,6 +47,9 @@ cat >> ~/.zshrc.d/oh-my-zsh.zsh << EOF
 plugins+=(zsh-syntax-highlighting history-substring-search)
 
 EOF
+
+git clone git@github.com:denodev/oh-my-zsh-deno.git \
+	~/.oh-my-zsh/custom/plugins/deno
 
 cat >> ~/.zshrc.d/oh-my-zsh.zsh << EOF
 source \$ZSH/oh-my-zsh.sh

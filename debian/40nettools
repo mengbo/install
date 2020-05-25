@@ -30,6 +30,6 @@ pu mreset
 pu rtscts           No
 EOF
 
-sudo apt install proxychains
+sudo apt install proxychains-ng
 
 sudo apt install ansible

@@ -1,9 +1,0 @@
-#!/bin/sh -v
-
-brew install android-sdk
-
-mkdir -p ~/.profile.d
-cat > ~/.profile.d/android-sdk.sh << EOF
-# Android-SDK
-export ANDROID_HOME=/usr/local/opt/android-sdk
-EOF

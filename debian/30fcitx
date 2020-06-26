@@ -1,0 +1,34 @@
+#!/bin/sh -v
+
+sudo apt install fcitx5 fcitx5-chinese-addons
+sudo apt install fcitx5-frontend-gtk2 fcitx5-frontend-gtk3 fcitx5-frontend-qt5
+
+cat > ~/.config/fcitx5/profile << EOF
+[Groups/0]
+# Group Name
+Name=Default
+# Layout
+Default Layout=us
+# Default Input Method
+DefaultIM=pinyin
+ 
+[Groups/0/Items/0]
+# Name
+Name=keyboard-us
+# Layout
+Layout=
+ 
+[Groups/0/Items/1]
+# Name
+Name=pinyin
+# Layout
+Layout=
+ 
+[GroupOrder]
+0=Default
+EOF
+
+sudo apt install im-config
+im-config -n fcitx5
+
+# sudo dpkg-reconfigure locales

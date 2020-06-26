@@ -1,9 +1,9 @@
 #!/bin/sh -v
 
-sudo apt install ibus-pinyin
 
-sudo apt install ibus-gtk ibus-gtk3
+sudo apt install ibus ibus-pinyin
 
-sudo apt install ibus-qt4 qt4-qtconfig
-
+# sudo apt install ibus-qt4 qt4-qtconfig
 # qtconfig
+
+# sudo dpkg-reconfigure locales

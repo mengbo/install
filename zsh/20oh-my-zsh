@@ -22,6 +22,9 @@ cat >> ~/.zshrc.d/oh-my-zsh.zsh << EOF
 plugins+=(zsh-autosuggestions)
 
 EOF
+cat > ~/.zshrc.d/zsh-autosuggestions.zsh<< EOF
+bindkey '^ ' autosuggest-accept
+EOF
 test "$(uname)" = "Linux" &&
     cat > ~/.oh-my-zsh/custom/zsh-autosuggestions-config.zsh << EOF
 # https://github.com/Microsoft/console/pull/181

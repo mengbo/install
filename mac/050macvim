@@ -4,7 +4,7 @@ brew install lua python
 brew cask install macvim
 
 brew tap homebrew/cask-fonts
-brew cask install font-menlo-for-powerline
+brew cask install font-meslo-lg-nerd-font
 
 brew install the_silver_searcher
 

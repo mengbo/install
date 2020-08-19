@@ -1,0 +1,10 @@
+#!/bin/sh -v
+
+brew tap homebrew/cask-fonts
+brew cask install font-meslo-lg-nerd-font
+
+brew install lsd
+
+cat > ~/.profile.d/lsd.sh << EOF
+alias ls='lsd'
+EOF

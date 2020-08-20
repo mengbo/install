@@ -1,6 +1,8 @@
 #!/bin/sh -v
 
-brew cask install pl2303
+# These devices appear to be supported by Apple's generic IOUSBSerial driver.
+
+#brew cask install pl2303
 
 # https://forum.arduino.cc/index.php?topic=427825.0
 #brew cask install ftdi-vcp-driver
@@ -8,4 +10,4 @@ brew cask install pl2303
 # https://github.com/mengbo/ch340g-ch34g-ch34x-mac-os-x-driver
 #brew tap mengbo/ch340g-ch34g-ch34x-mac-os-x-driver \
 #	https://github.com/mengbo/ch340g-ch34g-ch34x-mac-os-x-driver
-brew cask install wch-ch34x-usb-serial-driver
+#brew cask install wch-ch34x-usb-serial-driver

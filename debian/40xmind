@@ -1,6 +1,6 @@
 #!/bin/sh -v
 
-XMINDDEB="https://dl3.xmind.net/XMind-2020-for-Linux-amd-64bit-10.1.2-202004142327.deb"
+XMINDDEB="https://dl2.xmind.cn/XMind-2020-for-Linux-amd-64bit-10.2.1-202008051959.deb"
 wget -c -O /tmp/XMind.deb "$XMINDDEB"
 sudo dpkg -i /tmp/XMind.deb
 sudo apt --fix-broken install

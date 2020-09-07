@@ -8,6 +8,8 @@ brew install nmap
 
 brew install zmap
 
+brew install socat
+
 brew install mitmproxy
 
 brew install sqlmap

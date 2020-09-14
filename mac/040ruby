@@ -1,4 +1,10 @@
 #!/bin/sh -v
 
 brew install ruby
-echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.profile.d/ruby.sh
+
+cat > ~/.profile.d/ruby.sh << EOF
+RUBYDIR=\$(brew --prefix ruby)
+export PATH="\$RUBYDIR/bin:\$PATH"
+GEMDIR=\$(gem environment gemdir)
+export PATH="\$GEMDIR/bin:\$PATH"
+EOF

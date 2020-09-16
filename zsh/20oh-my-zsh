@@ -7,11 +7,38 @@ cat > ~/.zshrc.d/oh-my-zsh.zsh << EOF
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="ys"
 plugins=(command-not-found git vi-mode)
-plugins+=(ripgrep fzf zsh-interactive-cd)
-plugins+=(nvm node npm yarn)
-plugins+=(pyenv python pip)
-plugins+=(rbenv ruby gem bundler)
+plugins+=(ripgrep fzf)
+#plugins+=(nvm pyenv rbenv)
+plugins+=(node npm yarn)
+plugins+=(python pip)
+plugins+=(ruby gem bundler)
 plugins+=(docker docker-compose vagrant)
+
+EOF
+git clone git://github.com/zsh-users/zsh-completions \
+	~/.oh-my-zsh/custom/plugins/zsh-completions
+cat >> ~/.zshrc.d/oh-my-zsh.zsh << EOF
+# zsh-completions
+plugins+=(zsh-completions)
+# http://zsh.sourceforge.net/Doc/Release/Completion-System.html#Initialization
+#autoload -U compinit && compinit -u
+autoload -U compinit && compinit
+
+EOF
+
+git clone git@github.com:Aloxaf/fzf-tab.git \
+	~/.oh-my-zsh/custom/plugins/fzf-tab
+cat >> ~/.zshrc.d/oh-my-zsh.zsh << EOF
+# fzf-tab
+plugins+=(fzf-tab)
+
+EOF
+
+git clone git@github.com:zdharma/fast-syntax-highlighting.git \
+	~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
+cat >> ~/.zshrc.d/oh-my-zsh.zsh << EOF
+# Fast Syntax Highlighting
+plugins+=(fast-syntax-highlighting)
 
 EOF
 
@@ -29,25 +56,6 @@ test "$(uname)" = "Linux" &&
     cat > ~/.oh-my-zsh/custom/zsh-autosuggestions-config.zsh << EOF
 # https://github.com/Microsoft/console/pull/181
 #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
-
-EOF
-
-git clone git://github.com/zsh-users/zsh-completions \
-	~/.oh-my-zsh/custom/plugins/zsh-completions
-cat >> ~/.zshrc.d/oh-my-zsh.zsh << EOF
-# zsh-completions
-plugins+=(zsh-completions)
-# http://zsh.sourceforge.net/Doc/Release/Completion-System.html#Initialization
-#autoload -U compinit && compinit -u
-autoload -U compinit && compinit
-
-EOF
-
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
-	~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-cat >> ~/.zshrc.d/oh-my-zsh.zsh << EOF
-# zsh-syntax-highlighting
-plugins+=(zsh-syntax-highlighting history-substring-search)
 
 EOF
 

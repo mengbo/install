@@ -1,13 +1,22 @@
 #!/bin/sh -v
 
-cd ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-git pull --rebase --stat origin master
+UPDATER=~/.oh-my-zsh/tools/upgrade.sh
 
-cd ~/.oh-my-zsh/custom/plugins/zsh-completions
-git pull --rebase --stat origin master
+cp $UPDATER $UPDATER.orig
+sed "s/exit \$status/#exit \$status/" $UPDATER.orig > $UPDATER
 
-cd ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-git pull --rebase --stat origin master
+cat >> $UPDATER << EOF
 
-cd ~/.oh-my-zsh
-git pull --rebase --stat origin master
+# Update custom plugins and themes
+printf "\n\${BLUE}%s\${RESET}\n" "Updating custom plugins and themes"
+cd custom/
+for plugin in plugins/*/ themes/*/; do
+  if [ -d "\$plugin/.git" ]; then
+     printf "\${YELLOW}%s\${RESET}\n" "\${plugin%/}"
+     git -C "\$plugin" pull
+  fi
+done
+
+# Exit with \`1\` if the update failed
+exit \$status
+EOF

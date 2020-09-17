@@ -42,10 +42,6 @@ cat >> ~/.zshrc.d/10oh-my-zsh.zsh << EOF
 plugins+=(fzf-tab)
 
 EOF
-cat > ~/.zshrc.d/20fzf-tab.zsh<< EOF
-# https://github.com/Aloxaf/fzf-tab/issues/32
-zstyle ':completion:*' list-colors \${(s.:.)LS_COLORS}
-EOF
 
 git clone git://github.com/zsh-users/zsh-autosuggestions \
 	~/.oh-my-zsh/custom/plugins/zsh-autosuggestions

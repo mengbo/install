@@ -17,4 +17,7 @@ wget -O ~/.dir_colors \
 cat > ~/.profile.d/dircolors.sh << EOF
 eval \`gdircolors ~/.dir_colors\`
 EOF
-
+cat > ~/.zshrc.d/20dircolors.zsh << EOF
+# https://github.com/Aloxaf/fzf-tab/issues/32
+zstyle ':completion:*' list-colors \${(s.:.)LS_COLORS}
+EOF

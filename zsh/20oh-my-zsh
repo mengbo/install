@@ -10,7 +10,7 @@ plugins=(command-not-found git vi-mode)
 plugins+=(ripgrep fzf)
 #plugins+=(nvm pyenv rbenv)
 plugins+=(node npm yarn)
-plugins+=(python pip)
+plugins+=(python pip pipenv)
 plugins+=(ruby gem bundler)
 plugins+=(docker docker-compose vagrant)
 

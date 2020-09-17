@@ -20,18 +20,6 @@ if [ -d /opt/X11/bin ]; then
     PATH="\$PATH:/opt/X11/bin"
 fi
 
-# Ignore the permission issues and load the completion system normally.
-ZSH_DISABLE_COMPFIX=true
-
-if [ -d ~/.zshrc.d ]; then
-    for i in ~/.zshrc.d/*.zsh; do
-        if [ -r \$i ]; then
-            source \$i
-        fi
-    done
-    unset i
-fi
-
 if [ -d /etc/profile.d ]; then
     for i in /etc/profile.d/*.sh; do
         if [ -r \$i ]; then
@@ -43,6 +31,18 @@ fi
 
 if [ -d ~/.profile.d ]; then
     for i in ~/.profile.d/*.sh; do
+        if [ -r \$i ]; then
+            source \$i
+        fi
+    done
+    unset i
+fi
+
+# Ignore the permission issues and load the completion system normally.
+ZSH_DISABLE_COMPFIX=true
+
+if [ -d ~/.zshrc.d ]; then
+    for i in ~/.zshrc.d/*.zsh; do
         if [ -r \$i ]; then
             source \$i
         fi

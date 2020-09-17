@@ -3,7 +3,7 @@
 rm -rf ~/.oh-my-zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 mkdir -p ~/.zshrc.d
-cat > ~/.zshrc.d/oh-my-zsh.zsh << EOF
+cat > ~/.zshrc.d/10oh-my-zsh.zsh << EOF
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="ys"
 plugins=(command-not-found git vi-mode)
@@ -15,9 +15,10 @@ plugins+=(ruby gem bundler)
 plugins+=(docker docker-compose vagrant)
 
 EOF
+
 git clone git://github.com/zsh-users/zsh-completions \
 	~/.oh-my-zsh/custom/plugins/zsh-completions
-cat >> ~/.zshrc.d/oh-my-zsh.zsh << EOF
+cat >> ~/.zshrc.d/10oh-my-zsh.zsh << EOF
 # zsh-completions
 plugins+=(zsh-completions)
 # http://zsh.sourceforge.net/Doc/Release/Completion-System.html#Initialization
@@ -26,30 +27,30 @@ autoload -U compinit && compinit
 
 EOF
 
-git clone git@github.com:Aloxaf/fzf-tab.git \
-	~/.oh-my-zsh/custom/plugins/fzf-tab
-cat >> ~/.zshrc.d/oh-my-zsh.zsh << EOF
-# fzf-tab
-plugins+=(fzf-tab)
-
-EOF
-
 git clone git@github.com:zdharma/fast-syntax-highlighting.git \
 	~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
-cat >> ~/.zshrc.d/oh-my-zsh.zsh << EOF
+cat >> ~/.zshrc.d/10oh-my-zsh.zsh << EOF
 # Fast Syntax Highlighting
 plugins+=(fast-syntax-highlighting)
 
 EOF
 
+git clone git@github.com:Aloxaf/fzf-tab.git \
+	~/.oh-my-zsh/custom/plugins/fzf-tab
+cat >> ~/.zshrc.d/10oh-my-zsh.zsh << EOF
+# fzf-tab
+plugins+=(fzf-tab)
+
+EOF
+
 git clone git://github.com/zsh-users/zsh-autosuggestions \
 	~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-cat >> ~/.zshrc.d/oh-my-zsh.zsh << EOF
+cat >> ~/.zshrc.d/10oh-my-zsh.zsh << EOF
 # zsh-autosuggestions
 plugins+=(zsh-autosuggestions)
 
 EOF
-cat > ~/.zshrc.d/zsh-autosuggestions.zsh<< EOF
+cat > ~/.zshrc.d/20zsh-autosuggestions.zsh<< EOF
 bindkey '^ ' autosuggest-accept
 EOF
 test "$(uname)" = "Linux" &&
@@ -59,6 +60,10 @@ test "$(uname)" = "Linux" &&
 
 EOF
 
-cat >> ~/.zshrc.d/oh-my-zsh.zsh << EOF
+cat >> ~/.zshrc.d/10oh-my-zsh.zsh << EOF
 source \$ZSH/oh-my-zsh.sh
+EOF
+
+cat >> ~/.zshrc.d/90lsd.zsh << EOF
+lsd -d . &>/dev/null && alias ls='lsd'
 EOF

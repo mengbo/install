@@ -56,16 +56,15 @@ plugins+=(zsh-autosuggestions)
 EOF
 cat > ~/.zshrc.d/20zsh-autosuggestions.zsh<< EOF
 bindkey '^ ' autosuggest-accept
-EOF
-test "$(uname)" = "Linux" &&
-    cat > ~/.oh-my-zsh/custom/zsh-autosuggestions-config.zsh << EOF
 # https://github.com/Microsoft/console/pull/181
-#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
-
+if [[ "\$OSTYPE" == linux* ]]; then
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
+fi
 EOF
 
 cat >> ~/.zshrc.d/10oh-my-zsh.zsh << EOF
 source \$ZSH/oh-my-zsh.sh
+
 EOF
 
 cat >> ~/.zshrc.d/90lsd.zsh << EOF

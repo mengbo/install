@@ -7,3 +7,8 @@ sudo dpkg -i /tmp/lsd.deb
 cat > ~/.profile.d/lsd.sh << EOF
 alias ls='lsd'
 EOF
+
+cat >> ~/.zshrc.d/90lsd.zsh << EOF
+lsd -d . &>/dev/null && alias ls='lsd'
+EOF
+

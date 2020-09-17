@@ -60,9 +60,4 @@ EOF
 
 cat >> ~/.zshrc.d/10oh-my-zsh.zsh << EOF
 source \$ZSH/oh-my-zsh.sh
-
-EOF
-
-cat >> ~/.zshrc.d/90lsd.zsh << EOF
-lsd -d . &>/dev/null && alias ls='lsd'
 EOF

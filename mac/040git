@@ -2,3 +2,6 @@
 
 brew install git
 brew install tig
+
+# https://github.com/Homebrew/homebrew-core/issues/33275
+rm /usr/local/share/zsh/site-functions/_git

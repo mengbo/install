@@ -1,0 +1,9 @@
+#!/bin/sh -v
+
+cat > ~/.zshrc.d/20zsh-autosuggestions.zsh<< 'EOF'
+bindkey '^ ' autosuggest-accept
+# https://github.com/Microsoft/console/pull/181
+if [[ "$OSTYPE" == linux* ]]; then
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
+fi
+EOF

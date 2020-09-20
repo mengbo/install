@@ -1,0 +1,51 @@
+#!/bin/sh -v
+
+cat > ~/.zshrc.d/20fzf-tab.zsh << 'EOF'
+# disable sort when completing options of any command
+zstyle ':completion:complete:*:options' sort false
+
+# use input as query string when completing zlua
+zstyle ':fzf-tab:complete:_zlua:*' query-string input
+
+# (experimental, may change in the future)
+# some boilerplate code to define the variable `extract` which will be used later
+# please remember to copy them
+local extract="
+# trim input(what you select)
+local in=\${\${\"\$(<{f})\"%\$'\0'*}#*\$'\0'}
+# get ctxt for current completion(some thing before or after the current word)
+local -A ctxt=(\"\${(@ps:\2:)CTXT}\")
+# real path
+local realpath=\${ctxt[IPREFIX]}\${ctxt[hpre]}\$in
+realpath=\${(Qe)~realpath}
+"
+
+# give a preview of commandline arguments when completing `kill`
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm,cmd -w -w"
+zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps --pid=$in[(w)1] -o cmd --no-headers -w -w' --preview-window=down:3:wrap
+
+# give a preview of directory by lsd when completing cd
+zstyle ':fzf-tab:complete:cd:*' extra-opts --preview=$extract'lsd -1 --no-symlink --color=always $realpath'
+
+
+zstyle ':completion:*:descriptions' format '[%d]'
+FZF_TAB_GROUP_COLORS=(
+    $'\033[36m'
+    $'\033[35m'
+    $'\033[34m'
+    $'\033[33m'
+    $'\033[32m'
+    $'\033[31m'
+    $'\033[38;5;86m'
+    $'\033[38;5;109m'
+    $'\033[38;5;138m'
+    $'\033[38;5;167m'
+    $'\033[96m'
+    $'\033[95m'
+    $'\033[94m'
+    $'\033[93m'
+    $'\033[92m'
+    $'\033[91m'
+)
+zstyle ':fzf-tab:*' group-colors $FZF_TAB_GROUP_COLORS
+EOF

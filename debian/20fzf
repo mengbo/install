@@ -6,12 +6,17 @@ sudo ln -sf /usr/share/doc/fzf/examples/completion.zsh \
 
 sudo apt install fd-find ripgrep
 
-cat > ~/.profile.d/fzf.sh << EOF
-export PATH=/usr/lib/cargo/bin/:\$PATH
+cat > ~/.profile.d/fzf.sh << 'EOF'
+export PATH=/usr/lib/cargo/bin/:$PATH
 export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_CTRL_T_COMMAND="\$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--inline-info"
 export FZF_CTRL_T_OPTS="--inline-info --preview='fzf-previewer {}'"
+
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS
+    --color fg:-1,bg:-1,hl:33,fg+:254,bg+:235,hl+:33
+    --color info:136,prompt:136,pointer:230,marker:230,spinner:136
+    "
 EOF
 
 cat > ~/bin/fzf-previewer << EOF

@@ -5,6 +5,7 @@ brew install tcptraceroute
 brew install hping
 
 brew install nmap
+ln -s /usr/local/lib/python2.7/site-packages/ndiff.py ~/bin/ndiff
 
 brew install zmap
 

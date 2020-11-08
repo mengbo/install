@@ -1,7 +1,7 @@
 #!/bin/sh -v
 
 rm -rf ~/.oh-my-zsh
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 mkdir -p ~/.zshrc.d
 cat > ~/.zshrc.d/10oh-my-zsh.zsh << EOF
 export ZSH=~/.oh-my-zsh
@@ -16,7 +16,7 @@ plugins+=(docker docker-compose vagrant)
 
 EOF
 
-git clone git://github.com/zsh-users/zsh-completions \
+git clone https://github.com/zsh-users/zsh-completions \
 	~/.oh-my-zsh/custom/plugins/zsh-completions
 cat >> ~/.zshrc.d/10oh-my-zsh.zsh << EOF
 # zsh-completions
@@ -27,7 +27,7 @@ autoload -U compinit && compinit
 
 EOF
 
-git clone git://github.com/zdharma/fast-syntax-highlighting.git \
+git clone https://github.com/zdharma/fast-syntax-highlighting.git \
 	~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
 cat >> ~/.zshrc.d/10oh-my-zsh.zsh << EOF
 # Fast Syntax Highlighting
@@ -35,7 +35,7 @@ plugins+=(fast-syntax-highlighting)
 
 EOF
 
-git clone git://github.com/Aloxaf/fzf-tab.git \
+git clone https://github.com/Aloxaf/fzf-tab.git \
 	~/.oh-my-zsh/custom/plugins/fzf-tab
 cat >> ~/.zshrc.d/10oh-my-zsh.zsh << EOF
 # fzf-tab
@@ -43,7 +43,7 @@ plugins+=(fzf-tab)
 
 EOF
 
-git clone git://github.com/zsh-users/zsh-autosuggestions \
+git clone https://github.com/zsh-users/zsh-autosuggestions \
 	~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 cat >> ~/.zshrc.d/10oh-my-zsh.zsh << EOF
 # zsh-autosuggestions

@@ -6,7 +6,7 @@ mkdir -p ~/.zshrc.d
 cat > ~/.zshrc.d/10oh-my-zsh.zsh << EOF
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="ys"
-plugins=(command-not-found git vi-mode)
+plugins=(git vi-mode)
 plugins+=(ripgrep fzf)
 #plugins+=(nvm pyenv rbenv)
 plugins+=(node npm yarn)

@@ -3,9 +3,9 @@
 sudo apt install zsh
 chsh -s /usr/bin/zsh
 
-sudo apt install command-not-found
-sudo apt-file update
-sudo update-command-not-found
+#sudo apt install command-not-found
+#sudo apt-file update
+#sudo update-command-not-found
 
 sudo apt install tldr
 

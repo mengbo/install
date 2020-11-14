@@ -1,14 +1,12 @@
 #!/bin/sh -v
 
-wget -O /tmp/lsd.deb \
-    https://github.com/Peltoche/lsd/releases/download/0.17.0/lsd_0.17.0_amd64.deb
-sudo dpkg -i /tmp/lsd.deb
+sudo apt install lsd
 
 cat > ~/.profile.d/lsd.sh << EOF
 alias ls='lsd'
 EOF
 
-cat >> ~/.zshrc.d/90lsd.zsh << EOF
+cat > ~/.zshrc.d/90lsd.zsh << EOF
 lsd -d . &>/dev/null && alias ls='lsd'
 EOF
 

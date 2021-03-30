@@ -1,5 +1,10 @@
 #!/bin/sh -v
 
+wget -c -O /tmp/gir1.2-appindicator3.deb http://ftp.debian.org/debian/pool/main/liba/libappindicator/gir1.2-appindicator3-0.1_0.4.92-8_amd64.deb
+wget -c -O /tmp/libappindicator3.deb http://ftp.debian.org/debian/pool/main/liba/libappindicator/libappindicator3-1_0.4.92-8_amd64.deb
+sudo dpkg -i /tmp/gir1.2-appindicator3.deb /tmp/libappindicator3.deb
+sudo apt install gvfs-bin
+
 NUTDEB="https://www.jianguoyun.com/static/exe/installer/debian/nautilus_nutstore_amd64.deb"
 wget -c -O /tmp/nautilus_nutstore_amd64.deb "$NUTDEB"
 sudo dpkg -i /tmp/nautilus_nutstore_amd64.deb

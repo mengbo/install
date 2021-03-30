@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -v
 
 sudo dpkg --add-architecture i386 && sudo apt update && sudo apt install wine32
 sudo apt install winetricks
@@ -11,8 +11,8 @@ WINARCH=win32 LANG=zh_CN.UTF-8 WINEPREFIX=$HOME/Wine/WeChat winecfg
 WINARCH=win32 LANG=zh_CN.UTF-8 WINEPREFIX=$HOME/Wine/WeChat winetricks # Install riched20.dll
 
 
-#wget https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe
-WINARCH=win32 LANG=zh_CN.UTF-8 WINEPREFIX=$HOME/Wine/WeChat wine WeChatSetup.exe
+wget -c -O /tmp/WeChatSetup.exe https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe
+WINARCH=win32 LANG=zh_CN.UTF-8 WINEPREFIX=$HOME/Wine/WeChat wine /tmp/WeChatSetup.exe
 WINARCH=win32 LANG=zh_CN.UTF-8 WINEPREFIX=$HOME/Wine/WeChat wine \
 	"$HOME/Wine/WeChat/drive_c/Program Files\ (x86)/Tencent/WeChat/WeChat.exe"
 
@@ -30,3 +30,4 @@ StartupWMClass=wechat.exe
 EOF
 
 #killall -HUP gnome-shell
+#gnome-tweaks

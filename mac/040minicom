@@ -4,7 +4,7 @@ brew install minicom lrzsz
 cat /usr/local/etc/minirc.dfl > $HOME/.minirc.dfl
 cat >> $HOME/.minirc.dfl << EOF
 #pu port             /dev/tty.usbserial
-pu port             /dev/tty.OSTRAN-SPPDev
+pu port             /dev/tty.OSTRAN
 pu baudrate         9600
 pu bits             8
 pu parity           N

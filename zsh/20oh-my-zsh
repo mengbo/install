@@ -27,11 +27,11 @@ autoload -U compinit && compinit
 
 EOF
 
-git clone https://github.com/zdharma/fast-syntax-highlighting.git \
-	~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+	~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 cat >> ~/.zshrc.d/10oh-my-zsh.zsh << EOF
-# Fast Syntax Highlighting
-plugins+=(fast-syntax-highlighting)
+# Zsh Syntax Highlighting
+plugins+=(zsh-syntax-highlighting)
 
 EOF
 

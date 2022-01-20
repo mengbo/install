@@ -9,6 +9,8 @@ if [ "$1" != "new" ]; then
 	exit 1
 fi
 
+# gemx rails new $2 && exit 1
+
 mkdir "$2" && cd "$2" && shift 2 &&
 	echo "source 'https://gems.ruby-china.com'" > Gemfile &&
 	echo "gem 'rails'" >> Gemfile &&

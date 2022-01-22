@@ -1,0 +1,11 @@
+#!/bin/sh -v
+
+sudo sh -c 'echo "deb http://mirrors.aliyun.com/debian/ unstable main contrib non-free" >> /etc/apt/sources.list.d/debian.list'
+
+cat << EOF | sudo tee /etc/apt/preferences.d/debian
+Package: *
+Pin: release o=Debian
+Pin-Priority: 10
+EOF
+
+sudo apt update

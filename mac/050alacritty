@@ -1,0 +1,89 @@
+#!/bin/sh -v
+
+brew install alacritty
+
+cat > ~/.alacritty.yml << 'EOF'
+env:
+  TERM: alacritty
+
+window:
+  dimensions:
+    columns: 80
+    lines: 24
+  padding:
+    x: 5
+    y: 5
+  opacity: 0.95
+
+scrolling:
+  history: 10000
+
+# Font configuration
+font:
+  normal:
+    family: MesloLGS Nerd Font
+    style: Regular
+  bold:
+    family: MesloLGS Nerd Font
+    style: Bold
+  italic:
+    family: MesloLGS Nerd Font
+    style: Italic
+  bold_italic:
+    family: MesloLGS Nerd Font
+    style: Bold Italic
+  size: 16.0
+
+# Colors (Solarized Dark)
+colors:
+  # Default colors
+  primary:
+    background: '#002b36' # base03
+    foreground: '#839496' # base0
+
+  # Cursor colors
+  cursor:
+    text:   '#002b36' # base03
+    cursor: '#839496' # base0
+
+  # Normal colors
+  normal:
+    black:   '#073642' # base02
+    red:     '#dc322f' # red
+    green:   '#859900' # green
+    yellow:  '#b58900' # yellow
+    blue:    '#268bd2' # blue
+    magenta: '#d33682' # magenta
+    cyan:    '#2aa198' # cyan
+    white:   '#eee8d5' # base2
+
+  # Bright colors
+  bright:
+    black:   '#002b36' # base03
+    red:     '#cb4b16' # orange
+    green:   '#586e75' # base01
+    yellow:  '#657b83' # base00
+    blue:    '#839496' # base0
+    magenta: '#6c71c4' # violet
+    cyan:    '#93a1a1' # base1
+    white:   '#fdf6e3' # base3
+
+bell:
+  # macOS
+  command:
+    program: osascript
+    args: ["-e", "beep"]
+  # Linux
+  #command:
+  #  program: xkbbell
+
+selection:
+  save_to_clipboard: true
+
+key_bindings:
+  - { key: N, mods: Command, action: CreateNewWindow}
+  - { key: Space, mods: Control, chars: "\x00"}
+EOF
+
+# Don't forget install Pictogram, and change icon.
+# Don't forget install HazeOver.

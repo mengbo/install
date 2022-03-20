@@ -1,0 +1,7 @@
+#!/bin/sh -v
+
+sudo apt install gpg
+
+cat > ~/.profile.d/gnupg.sh << 'EOF'
+export GPG_TTY=$(tty)
+EOF

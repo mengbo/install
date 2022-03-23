@@ -5,7 +5,6 @@ brew install mas
 #mas install 497799835 #Xcode
 
 mas install 407963104 #Pixelmator
-mas install 423368786 #SystemMonitor
 mas install 425424353 #The Unarchiver
 mas install 430798174 #HazeOver
 mas install 445189367 #PopClip

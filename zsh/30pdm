@@ -1,8 +1,10 @@
-#!/usr/bin/env zsh -v
+#!/usr/bin/env -S zsh -v
 
 cat > ~/.zshrc.d/30pdm.zsh<< 'EOF'
 eval "$(pdm --pep582 zsh)"
 EOF
+
+eval "$(pdm --pep582 zsh)"
 
 ZSH_CUSTOM=~/.oh-my-zsh/custom
 

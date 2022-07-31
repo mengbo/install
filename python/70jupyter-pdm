@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh -v
+#!/usr/bin/env zsh
 
 #apt install jupyter || brew install jupyter
 

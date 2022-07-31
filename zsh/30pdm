@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh -v
+
+cat > ~/.zshrc.d/30pdm.zsh<< 'EOF'
+eval "$(pdm --pep582 zsh)"
+EOF
+
+ZSH_CUSTOM=~/.oh-my-zsh/custom
+
+mkdir -p $ZSH_CUSTOM/plugins/pdm
+pdm completion zsh > $ZSH_CUSTOM/plugins/pdm/_pdm

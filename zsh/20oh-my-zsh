@@ -11,7 +11,7 @@ plugins+=(ripgrep fzf)
 #plugins+=(nvm pyenv rbenv)
 plugins+=(asdf direnv)
 plugins+=(node npm yarn)
-plugins+=(python pip pipenv)
+plugins+=(python pip pipenv pdm)
 plugins+=(ruby gem bundler)
 plugins+=(docker docker-compose vagrant)
 

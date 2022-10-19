@@ -5,6 +5,7 @@ brew install alacritty
 cat > ~/.alacritty.yml << 'EOF'
 env:
   TERM: alacritty
+	LC_ALL: zh_CN.UTF-8
 
 window:
   dimensions:

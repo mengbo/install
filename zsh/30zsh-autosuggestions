@@ -3,7 +3,7 @@
 cat > ~/.zshrc.d/20zsh-autosuggestions.zsh<< 'EOF'
 bindkey '^ ' autosuggest-accept
 # https://github.com/Microsoft/console/pull/181
-if [[ "$OSTYPE" == linux* || $TERM == alacritty || $TERM_PROGRAM=vscode ]]; then
+if [[ "$OSTYPE" == linux* || $TERM == alacritty || $TERM_PROGRAM == vscode ]]; then
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 fi
 EOF

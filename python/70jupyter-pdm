@@ -6,6 +6,7 @@ mkdir -p ~/tmp/jupyter-demo
 cd ~/tmp/jupyter-demo
 
 pdm init -n
+pdm use python3
 pdm add ipykernel
 pdm run python3 -m ipykernel install --user --name "$(basename "$PWD")"
 

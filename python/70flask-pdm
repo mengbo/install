@@ -4,6 +4,7 @@ mkdir -p ~/tmp/flask-demo
 cd ~/tmp/flask-demo
 
 pdm init -n
+pdm use python3
 pdm add  flask
 #pdm add --dev pytest pylint yapf
 

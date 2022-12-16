@@ -5,6 +5,7 @@ eval "$(pdm --pep582 zsh)"
 EOF
 
 eval "$(pdm --pep582 zsh)"
+pdm config python.use_venv false
 
 ZSH_CUSTOM=~/.oh-my-zsh/custom
 

@@ -1,6 +1,6 @@
 #!/bin/sh -v
 
-brew install fd ripgrep
+brew install fd ripgrep tree
 brew install fzf
 
 cat > ~/.profile.d/fzf.sh << 'EOF'

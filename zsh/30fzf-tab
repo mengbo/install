@@ -1,40 +1,31 @@
 #!/bin/sh -v
 
 cat > ~/.zshrc.d/20fzf-tab.zsh << 'EOF'
-# disable sort when completing options of any command
+# Disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+
+# Set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# Disable sort when completing options of any command
 zstyle ':completion:complete:*:options' sort false
 
-# use input as query string when completing zlua
+# Use input as query string when completing zlua
 zstyle ':fzf-tab:complete:_zlua:*' query-string input
 
-# give a preview of commandline arguments when completing `kill`
-zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
-zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-preview \
-  '[[ $group == "[process ID]" ]] && ps --pid=$word -o cmd --no-headers -w -w'
-zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=down:3:wrap
+# Show file contents
+zstyle ':fzf-tab:complete:*:*' fzf-preview 'fzf-previewer ${(Q)realpath}'
+zstyle ':fzf-tab:*' fzf-min-height 12
 
-# give a preview of directory by lsd when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd -1 --color=always --no-symlink $realpath'
+# Show environment variables
+zstyle ':fzf-tab:complete:((-parameter-|unset):|(export|typeset|declare|local):argument-rest)'\
+    fzf-preview 'echo ${(P)word}'
 
-# display colors for different groups and their descriptions
+# Disable previews for commands options and arguments
+zstyle ':fzf-tab:complete:-command-:*' fzf-preview
+zstyle ':fzf-tab:complete:*:options' fzf-preview
+zstyle ':fzf-tab:complete:*:argument-1' fzf-preview
+
+# Display colors for different groups and their descriptions
 zstyle ':completion:*:descriptions' format '[%d]'
-FZF_TAB_GROUP_COLORS=(
-    $'\033[36m'
-    $'\033[35m'
-    $'\033[34m'
-    $'\033[33m'
-    $'\033[32m'
-    $'\033[31m'
-    $'\033[38;5;86m'
-    $'\033[38;5;109m'
-    $'\033[38;5;138m'
-    $'\033[38;5;167m'
-    $'\033[96m'
-    $'\033[95m'
-    $'\033[94m'
-    $'\033[93m'
-    $'\033[92m'
-    $'\033[91m'
-)
-zstyle ':fzf-tab:*' group-colors $FZF_TAB_GROUP_COLORS
 EOF

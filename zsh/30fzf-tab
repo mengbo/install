@@ -1,31 +1,29 @@
 #!/bin/sh -v
 
 cat > ~/.zshrc.d/20fzf-tab.zsh << 'EOF'
-# Disable sort when completing `git checkout`
-zstyle ':completion:*:git-checkout:*' sort false
-
-# Set list-colors to enable filename colorizing
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
-# Disable sort when completing options of any command
+# disable sort when completing options of any command
 zstyle ':completion:complete:*:options' sort false
 
-# Use input as query string when completing zlua
-zstyle ':fzf-tab:complete:_zlua:*' query-string input
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
 
-# Show file contents
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# show file contents
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'fzf-previewer ${(Q)realpath}'
-zstyle ':fzf-tab:*' fzf-min-height 12
+zstyle ':fzf-tab:complete:*:*' fzf-flags "--preview-window=down,4"
+zstyle ':fzf-tab:*' fzf-pad 7
 
-# Show environment variables
-zstyle ':fzf-tab:complete:((-parameter-|unset):|(export|typeset|declare|local):argument-rest)'\
-    fzf-preview 'echo ${(P)word}'
-
-# Disable previews for commands options and arguments
-zstyle ':fzf-tab:complete:-command-:*' fzf-preview
+# disable or override preview for command options and subcommands
 zstyle ':fzf-tab:complete:*:options' fzf-preview
 zstyle ':fzf-tab:complete:*:argument-1' fzf-preview
 
-# Display colors for different groups and their descriptions
-zstyle ':completion:*:descriptions' format '[%d]'
+# environment variable preview
+zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|expand):*' \
+    fzf-preview 'echo ${(P)word}'
+
+# commands preview
+zstyle ':fzf-tab:complete:-command-:*' fzf-preview \
+    '(out=$(which "$word") && echo $out) || echo "${(P)word}"'
 EOF

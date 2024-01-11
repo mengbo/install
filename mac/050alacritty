@@ -81,9 +81,9 @@ args = ["-e", "beep"]
 save_to_clipboard = true
 
 [[keyboard.bindings]]
-action = "CreateNewWindow"
 key = "N"
 mods = "Command"
+action = "CreateNewWindow"
 
 [[keyboard.bindings]]
 key = "Space"

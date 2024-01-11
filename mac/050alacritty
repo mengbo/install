@@ -3,87 +3,92 @@
 brew install alacritty
 
 cat > ~/.alacritty.yml << 'EOF'
-env:
-  TERM: alacritty
-	LC_ALL: zh_CN.UTF-8
+[env]
+LC_ALL = "zh_CN.UTF-8"
+TERM = "alacritty"
 
-window:
-  dimensions:
-    columns: 80
-    lines: 24
-  padding:
-    x: 5
-    y: 5
-  opacity: 0.95
+[window]
+opacity = 1.0
 
-scrolling:
-  history: 10000
+[window.dimensions]
+columns = 80
+lines = 24
+
+[window.padding]
+x = 5
+y = 5
+
+[scrolling]
+history = 10000
 
 # Font configuration
-font:
-  normal:
-    family: MesloLGS Nerd Font
-    style: Regular
-  bold:
-    family: MesloLGS Nerd Font
-    style: Bold
-  italic:
-    family: MesloLGS Nerd Font
-    style: Italic
-  bold_italic:
-    family: MesloLGS Nerd Font
-    style: Bold Italic
-  size: 16.0
+[font]
+size = 16.0
+
+[font.normal]
+family = "MesloLGS Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "MesloLGS Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "MesloLGS Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "MesloLGS Nerd Font"
+style = "Bold Italic"
+
 
 # Colors (Solarized Dark)
-colors:
-  # Default colors
-  primary:
-    background: '#002b36' # base03
-    foreground: '#839496' # base0
+# Default colors
+[colors.primary]
+background = '#002b36'
+foreground = '#839496'
 
-  # Cursor colors
-  cursor:
-    text:   '#002b36' # base03
-    cursor: '#839496' # base0
+# Normal colors
+[colors.normal]
+black   = '#073642'
+red     = '#dc322f'
+green   = '#859900'
+yellow  = '#b58900'
+blue    = '#268bd2'
+magenta = '#d33682'
+cyan    = '#2aa198'
+white   = '#eee8d5'
 
-  # Normal colors
-  normal:
-    black:   '#073642' # base02
-    red:     '#dc322f' # red
-    green:   '#859900' # green
-    yellow:  '#b58900' # yellow
-    blue:    '#268bd2' # blue
-    magenta: '#d33682' # magenta
-    cyan:    '#2aa198' # cyan
-    white:   '#eee8d5' # base2
+# Bright colors
+[colors.bright]
+black   = '#002b36'
+red     = '#cb4b16'
+green   = '#586e75'
+yellow  = '#657b83'
+blue    = '#839496'
+magenta = '#6c71c4'
+cyan    = '#93a1a1'
+white   = '#fdf6e3'
 
-  # Bright colors
-  bright:
-    black:   '#002b36' # base03
-    red:     '#cb4b16' # orange
-    green:   '#586e75' # base01
-    yellow:  '#657b83' # base00
-    blue:    '#839496' # base0
-    magenta: '#6c71c4' # violet
-    cyan:    '#93a1a1' # base1
-    white:   '#fdf6e3' # base3
+[bell.command]
+# macOS
+program = "osascript"
+args = ["-e", "beep"]
+# Linux
+#program = "xkbbell"
 
-bell:
-  # macOS
-  command:
-    program: osascript
-    args: ["-e", "beep"]
-  # Linux
-  #command:
-  #  program: xkbbell
+[selection]
+save_to_clipboard = true
 
-selection:
-  save_to_clipboard: true
+[[keyboard.bindings]]
+action = "CreateNewWindow"
+key = "N"
+mods = "Command"
 
-key_bindings:
-  - { key: N, mods: Command, action: CreateNewWindow}
-  - { key: Space, mods: Control, chars: "\x00"}
+[[keyboard.bindings]]
+key = "Space"
+mods = "Control"
+chars = "\u0000"
 EOF
 
 # Don't forget install Pictogram, and change icon.

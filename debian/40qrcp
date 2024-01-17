@@ -1,0 +1,10 @@
+#!/bin/sh -v
+
+QRCP_DEB="https://github.com/claudiodangelis/qrcp/releases/download/0.11.1/qrcp_0.11.1_linux_x86_64.deb"
+wget -c -O /tmp/qrcp.deb "$QRCP_DEB"
+sudo dpkg -i /tmp/qrcp.deb
+sudo apt --fix-broken install
+
+cat > ~/.zshrc.d/90qrcp.zsh<< 'EOF'
+eval "$(qrcp completion zsh)"
+EOF

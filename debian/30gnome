@@ -2,8 +2,9 @@
 
 sudo apt install gnome-backgrounds
 
-sudo apt install gnome-shell-extension-system-monitor
+sudo apt install gnome-browser-connector gnome-shell-extension-prefs
 #gnome-shell-extension-prefs
+# Install extensions: appindicator-support & vitals
 
 sudo apt install gnome-tweaks
 #gnome-tweaks

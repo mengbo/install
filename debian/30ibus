@@ -1,7 +1,7 @@
 #!/bin/sh -v
 
 
-sudo apt install ibus ibus-pinyin
+sudo apt install ibus ibus-libpinyin
 
 # sudo apt install ibus-qt4 qt4-qtconfig
 # qtconfig

@@ -1,8 +1,8 @@
 #!/bin/sh -v
 
-brew cask install java
+brew install java
 
-brew tap caskroom/versions
-brew cask install java8
+#brew tap caskroom/versions
+#brew install java8
 
-brew install gradle maven
+#brew install gradle maven

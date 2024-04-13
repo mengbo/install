@@ -22,3 +22,5 @@ brew install hashcat
 brew install proxychains-ng
 
 brew install ansible
+
+brew install govc

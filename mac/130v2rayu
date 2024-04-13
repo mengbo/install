@@ -1,6 +1,0 @@
-#!/bin/sh -v
-
-brew cask install v2rayu
-
-# For OCSP's privacy problems
-codesign --remove-signature /Applications/V2rayU.app

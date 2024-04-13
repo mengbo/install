@@ -1,6 +1,6 @@
 #!/bin/sh -v
 
-brew cask install docker
+brew install docker
 
 #brew tap homebrew/completions
 brew install docker-completion

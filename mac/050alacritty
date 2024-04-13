@@ -2,7 +2,7 @@
 
 brew install alacritty
 
-cat > ~/.alacritty.yml << 'EOF'
+cat > ~/.alacritty.toml << 'EOF'
 [env]
 LC_ALL = "zh_CN.UTF-8"
 TERM = "alacritty"

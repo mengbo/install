@@ -3,7 +3,7 @@
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 mkdir -p ~/.profile.d
-cat > ~/.profile.d/homebrew.sh << 'EOF'
+cat > ~/.profile.d/10homebrew.sh << 'EOF'
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 #BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles

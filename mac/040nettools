@@ -1,11 +1,8 @@
 #!/bin/sh -v
 
-brew install tcptraceroute
-
-brew install hping
-
+# nmap nping ncat
 brew install nmap
-ln -s /usr/local/lib/python2.7/site-packages/ndiff.py ~/bin/ndiff
+chmod go-w /opt/homebrew/Cellar
 
 brew install masscan
 

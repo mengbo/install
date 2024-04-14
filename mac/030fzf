@@ -3,7 +3,7 @@
 brew install fd ripgrep tree
 brew install fzf
 
-cat > ~/.profile.d/fzf.sh << 'EOF'
+cat > ~/.profile.d/30fzf.sh << 'EOF'
 export RUNEWIDTH_EASTASIAN=0
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

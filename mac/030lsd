@@ -4,15 +4,21 @@ brew tap homebrew/cask-fonts
 brew install font-meslo-lg-nerd-font
 
 brew install lsd
-
 mkdir -p ~/.zshrc.d
-cat >> ~/.zshrc.d/90lsd.zsh << EOF
+cat > ~/.zshrc.d/90lsd.zsh << 'EOF'
 lsd -d . &>/dev/null && alias ls='lsd'
 EOF
 
-brew install vivid
-
+brew install coreutils
 mkdir -p ~/.profile.d
-cat > ~/.profile.d/vivid.sh << EOF
-export LS_COLORS="$(vivid generate solarized-dark)"
+curl -fsSL -o ~/.dir_colors \
+    https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark
+cat > ~/.profile.d/30dircolors.sh << 'EOF'
+eval `gdircolors ~/.dir_colors`
 EOF
+
+#brew install vivid
+#mkdir -p ~/.profile.d
+#cat > ~/.profile.d/30vivid.sh << EOF
+#export LS_COLORS="$(vivid generate solarized-dark)"
+#EOF

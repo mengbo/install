@@ -2,6 +2,6 @@
 
 brew install gpg
 
-cat > ~/.profile.d/gnupg.sh << 'EOF'
+cat > ~/.profile.d/30gnupg.sh << 'EOF'
 export GPG_TTY=$(tty)
 EOF

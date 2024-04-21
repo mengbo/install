@@ -1,0 +1,5 @@
+#!/bin/sh -v
+
+# https://www.vmware.com/go/get-fusionplayer-key
+brew install vmware-fusion
+

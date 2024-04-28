@@ -3,6 +3,6 @@
 brew install lima
 
 # limactl create --list-templates
-# limactl start --name=default --vm-type=vz	--cpus=4 --memory=8
+# limactl start --name=default --vm-type=vz --cpus=4 --memory=8
 # lima uname -a
 # nerdctl.lima run busybox /bin/echo hello world

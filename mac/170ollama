@@ -1,0 +1,8 @@
+#!/bin/sh -v
+
+brew install --cask ollama
+
+# ollama list
+# ollama list
+
+brew install chatbox

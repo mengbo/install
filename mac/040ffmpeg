@@ -1,0 +1,26 @@
+#!/bin/sh -v
+
+mkdir -p /tmp/ffmpeg
+mkdir -p ~/bin
+
+VERSION="1712343170_7.0"
+
+FFMPEG_URL="https://ffmpeg.martin-riedl.de/download/macos/arm64/$VERSION/ffmpeg.zip"
+curl -L -o /tmp/ffmpeg/ffmpeg.zip $FFMPEG_URL &&
+	unzip -d /tmp/ffmpeg /tmp/ffmpeg/ffmpeg.zip &&
+	chmod +x /tmp/ffmpeg/ffmpeg &&
+	mv /tmp/ffmpeg/ffmpeg ~/bin
+
+FFPROBE_URL="https://ffmpeg.martin-riedl.de/download/macos/arm64/$VERSION/ffprobe.zip"
+curl -L -o /tmp/ffmpeg/ffprobe.zip $FFPROBE_URL &&
+	unzip -d /tmp/ffmpeg /tmp/ffmpeg/ffprobe.zip &&
+	chmod +x /tmp/ffmpeg/ffprobe &&
+	mv /tmp/ffmpeg/ffprobe ~/bin
+
+FFPLAY_URL="https://ffmpeg.martin-riedl.de/download/macos/arm64/$VERSION/ffplay.zip"
+curl -L -o /tmp/ffmpeg/ffplay.zip $FFPLAY_URL &&
+	unzip -d /tmp/ffmpeg /tmp/ffmpeg/ffplay.zip &&
+	chmod +x /tmp/ffmpeg/ffplay &&
+	mv /tmp/ffmpeg/ffplay ~/bin
+
+rm -rf /tmp/ffmpeg

@@ -1,0 +1,7 @@
+#!/bin/sh -v
+
+mkdir -p ~/.local/share/zsh/site-functions
+cat > ~/.zshrc.d/20fpath.zsh<< 'EOF'
+fpath=(~/.local/share/zsh/site-functions $fpath)
+autoload -U compinit && compinit
+EOF

@@ -7,13 +7,13 @@ cat > ~/.zshrc.d/10oh-my-zsh.zsh << EOF
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="ys"
 plugins=(git vi-mode)
-plugins+=(ripgrep fzf)
+plugins+=(fzf)
 #plugins+=(nvm pyenv rbenv)
 plugins+=(asdf direnv)
 plugins+=(node npm yarn)
 plugins+=(python pip pipenv pdm)
 plugins+=(ruby gem bundler)
-plugins+=(docker docker-compose vagrant)
+plugins+=(docker docker-compose)
 
 EOF
 

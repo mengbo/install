@@ -1,0 +1,7 @@
+#!/bin/sh -v
+
+brew install aichat
+
+GHPROXY="https://gh-proxy.com/"
+INTE_ZSH="https://raw.githubusercontent.com/sigoden/aichat/main/scripts/shell-integration/integration.zsh"
+curl -s -L "${GHPROXY}${INTE_ZSH}" | sed 's#\\ee#^Y#' > ~/.zshrc.d/90aichat.zsh

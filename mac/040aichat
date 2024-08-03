@@ -7,7 +7,8 @@ INTE_ZSH="https://raw.githubusercontent.com/sigoden/aichat/main/scripts/shell-in
 curl -s -L "${GHPROXY}${INTE_ZSH}" | sed 's#\\ee#^Y#' > ~/.zshrc.d/90aichat.zsh
 
 # Link the config file path
-ln -sf "~/Library/Application Support/aichat" ~/.config/aichat
+mkdir -p "$HOME/Library/Application Support/aichat" 
+ln -sf "$HOME/Library/Application Support/aichat" ~/.config/aichat
 
 # RAC required tools
 brew install poppler
@@ -15,3 +16,11 @@ brew install pandoc
 npm config set prefix '~/.local/'
 ln -sf ~/.local/bin ~/bin
 npm install -g rag-crawler
+
+# Custom theme
+CONF_DIR="${HOME}/.config/aichat"
+GHPROXY="https://gh-proxy.com/"
+DARK="https://raw.githubusercontent.com/Okeanos/selenized/sublime-textmate/editors/sublime-WIP/Selenized%20Dark.tmTheme"
+LIGHT="https://raw.githubusercontent.com/Okeanos/selenized/sublime-textmate/editors/sublime-WIP/Selenized%20Light.tmTheme"
+curl -L -o "${CONF_DIR}/dark.tmTheme" "${GHPROXY}${DARK}"
+curl -L -o "${CONF_DIR}/light.tmTheme" "${GHPROXY}${LIGHT}"

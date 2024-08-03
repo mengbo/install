@@ -6,8 +6,12 @@ GHPROXY="https://gh-proxy.com/"
 INTE_ZSH="https://raw.githubusercontent.com/sigoden/aichat/main/scripts/shell-integration/integration.zsh"
 curl -s -L "${GHPROXY}${INTE_ZSH}" | sed 's#\\ee#^Y#' > ~/.zshrc.d/90aichat.zsh
 
+# Link the config file path
+ln -sf "~/Library/Application Support/aichat" ~/.config/aichat
+
 # RAC required tools
-#brew install poppler
-#brew install pandoc
-#npm config set prefix '~/.local/'
-#npm install -g rag-crawler
+brew install poppler
+brew install pandoc
+npm config set prefix '~/.local/'
+ln -sf ~/.local/bin ~/bin
+npm install -g rag-crawler

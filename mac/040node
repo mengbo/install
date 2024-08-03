@@ -1,3 +1,5 @@
 #!/bin/sh -v
 
 brew install node
+
+npm config set prefix '~/.local/'

@@ -8,7 +8,8 @@ curl -s -L "${GHPROXY}${INTE_ZSH}" | sed 's#\\ee#^Y#' > ~/.zshrc.d/90aichat.zsh
 
 # Link the config file path
 mkdir -p "$HOME/Library/Application Support/aichat" 
-ln -sf "$HOME/Library/Application Support/aichat" ~/.config/aichat
+[ -e ~/.config/aichat ] ||
+	ln -sf "$HOME/Library/Application Support/aichat" ~/.config/aichat
 
 # RAC required tools
 brew install poppler

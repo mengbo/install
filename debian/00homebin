@@ -1,0 +1,4 @@
+#!/bin/sh -v
+
+mkdir -p ~/.local/bin
+[ -e ~/bin ] || ln -sf ~/.local/bin ~/bin

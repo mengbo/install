@@ -5,9 +5,6 @@
 #	sudo sh -c  "echo /usr/local/bin/zsh >> /etc/shells" 
 #chsh -s /usr/local/bin/zsh
 
-mkdir -p ~/.local/bin
-ln -sf ~/.local/bin ~/bin
-
 mkdir -p ~/.profile.d
 cat > ~/.zprofile << 'EOF'
 export PATH=$HOME/bin:$PATH

@@ -1,3 +1,5 @@
 #!/bin/sh -v
 
 sudo apt install nodejs npm yarnpkg
+npm config set prefix '~/.local/'
+#yarn config set prefix '~/.local/'

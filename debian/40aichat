@@ -3,10 +3,24 @@
 GHPROXY="https://gh-proxy.com/"
 
 TAR_URL="https://github.com/sigoden/aichat/releases/download/v0.19.0/aichat-v0.19.0-x86_64-unknown-linux-musl.tar.gz"
-curl -s -L "${GHPROXY}${TAR_URL}" | tar zxv -C ~/bin
+curl -s -L "${GHPROXY}${TAR_URL}" | tar zxv -C ~/.local/bin
 
 COMP_ZSH="https://raw.githubusercontent.com/sigoden/aichat/main/scripts/completions/aichat.zsh"
 curl -s -L -o ~/.local/share/zsh/site-functions/_aichat "${GHPROXY}${COMP_ZSH}"
 
 INTE_ZSH="https://raw.githubusercontent.com/sigoden/aichat/main/scripts/shell-integration/integration.zsh"
 curl -s -L "${GHPROXY}${INTE_ZSH}" | sed 's#\\ee#^Y#' > ~/.zshrc.d/90aichat.zsh
+
+# RAC required tools
+sudo apt install poppler-utils
+sudo apt install pandoc
+npm config set prefix '~/.local/'
+npm install -g rag-crawler
+
+# Custom theme
+CONF_DIR="${HOME}/.config/aichat"
+GHPROXY="https://gh-proxy.com/"
+DARK="https://raw.githubusercontent.com/Okeanos/selenized/sublime-textmate/editors/sublime-WIP/Selenized%20Dark.tmTheme"
+LIGHT="https://raw.githubusercontent.com/Okeanos/selenized/sublime-textmate/editors/sublime-WIP/Selenized%20Light.tmTheme"
+curl -L -o "${CONF_DIR}/dark.tmTheme" "${GHPROXY}${DARK}"
+curl -L -o "${CONF_DIR}/light.tmTheme" "${GHPROXY}${LIGHT}"

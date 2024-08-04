@@ -14,7 +14,6 @@ ln -sf "$HOME/Library/Application Support/aichat" ~/.config/aichat
 brew install poppler
 brew install pandoc
 npm config set prefix '~/.local/'
-ln -sf ~/.local/bin ~/bin
 npm install -g rag-crawler
 
 # Custom theme

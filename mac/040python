@@ -3,15 +3,15 @@
 #brew install tcl-tk
 brew install python
 
-brew install pipx
+brew install pipx uv
 
 #brew install pipenv
 
-brew install pdm
-cat > ~/.zshrc.d/30pdm.zsh<< 'EOF'
-eval "$(pdm --pep582 zsh)"
-EOF
-eval "$(pdm --pep582 zsh)"
-pdm config python.use_venv false
+#brew install pdm
+#cat > ~/.zshrc.d/30pdm.zsh<< 'EOF'
+#eval "$(pdm --pep582 zsh)"
+#EOF
+#eval "$(pdm --pep582 zsh)"
+#pdm config python.use_venv false
 
 #brew install jupyterlab

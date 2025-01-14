@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+
+#apt install jupyterlab || brew install jupyterlab
+
+uv init --python python3.12 ~/tmp/jupyter-demo
+cd ~/tmp/jupyter-demo
+
+uv add --dev ipykernel
+uv run ipython kernel install --user --name "$(basename "$PWD")"
+
+uv add numpy pandas matplotlib
+
+#jupyter jupyter kernelspec list
+#jupyter kernelspec remove "$(basename "$PWD")"
+#rm -rf ~/tmp/jupyter-demo

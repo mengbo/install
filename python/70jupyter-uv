@@ -2,12 +2,14 @@
 
 #apt install jupyterlab || brew install jupyterlab
 
+# https://docs.astral.sh/uv/guides/integration/jupyter/
 uv init --python python3.12 ~/tmp/jupyter-demo
 cd ~/tmp/jupyter-demo
 
 uv add --dev ipykernel
 uv run ipython kernel install --user --name "$(basename "$PWD")"
 
+uv add --dev uv
 uv add numpy pandas matplotlib
 
 #jupyter jupyter kernelspec list

@@ -1,4 +1,0 @@
-#!/bin/sh -v
-
-brew install tldr
-tldr --update

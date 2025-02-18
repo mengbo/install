@@ -7,8 +7,6 @@ chsh -s /usr/bin/zsh
 #sudo apt-file update
 #sudo update-command-not-found
 
-sudo apt install tldr
-
 sudo apt install sysstat
 
 sudo apt install screen

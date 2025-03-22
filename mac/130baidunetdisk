@@ -1,3 +1,4 @@
 #!/bin/sh -v
 
-brew install baidunetdisk
+brew install baidupcs-go
+# brew install baidunetdisk

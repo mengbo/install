@@ -1,0 +1,47 @@
+#!/bin/sh -v
+
+brew install anaconda
+
+cat > ~/.zshrc.d/20conda.zsh << 'EOF'
+# `/opt/homebrew/anaconda3/bin/conda init $(basename $SHELL)`
+# Add to ~/.zshrc
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+EOF
+
+cat > ~/.condarc << EOF
+channels:
+  - defaults
+show_channel_urls: true
+default_channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+custom_channels:
+  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+auto_activate: false
+EOF
+
+git clone https://github.com/esc/conda-zsh-completion \
+   ~/.zsh/conda-zsh-completion
+cat > ~/.zshrc.d/30conda-zsh-completion.zsh << 'EOF'
+fpath+=~/.zsh/conda-zsh-completion
+# autoload -U compinit && compinit
+
+zstyle ':completion::complete:*' use-cache 1
+EOF
+
+conda create --name ${USER} --clone base

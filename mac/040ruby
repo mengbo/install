@@ -2,7 +2,7 @@
 
 brew install ruby
 
-cat > ~/.profile.d/40ruby.sh << EOF
+cat > ~/.profile.d/ruby.sh << EOF
 RUBYDIR=\$(brew --prefix ruby)
 export PATH="\$RUBYDIR/bin:\$PATH"
 GEMDIR=\$(gem environment gemdir)

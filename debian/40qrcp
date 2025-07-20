@@ -5,6 +5,6 @@ wget -c -O /tmp/qrcp.deb "$QRCP_DEB"
 sudo dpkg -i /tmp/qrcp.deb
 sudo apt --fix-broken install
 
-cat > ~/.zshrc.d/90qrcp.zsh<< 'EOF'
+cat > ~/.zshrc.d/80qrcp.zsh<< 'EOF'
 eval "$(qrcp completion zsh)"
 EOF

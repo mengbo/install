@@ -1,12 +1,9 @@
 #!/bin/sh -v
 
 brew install lua python
-brew install --cask macvim
+brew install macvim
 
-brew tap homebrew/cask-fonts
 brew install font-meslo-lg-nerd-font
-
-#brew install the_silver_searcher
 
 mkdir -p ~/bin
 ln -sf /Applications/MacVim.app/Contents/bin/view ~/bin/view

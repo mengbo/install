@@ -1,4 +1,4 @@
 install
 =======
 
-Shell scripts for Mac OS X & linux system installation.
+Shell scripts for macOS & Debian Linux system installation.

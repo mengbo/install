@@ -1,6 +1,0 @@
-#!/usr/bin/env -S zsh -v
-
-ZSH_CUSTOM=~/.oh-my-zsh/custom
-
-mkdir -p $ZSH_CUSTOM/plugins/pdm
-pdm completion zsh > $ZSH_CUSTOM/plugins/pdm/_pdm

@@ -9,7 +9,7 @@ COMP_ZSH="https://raw.githubusercontent.com/sigoden/aichat/main/scripts/completi
 curl -s -L -o ~/.local/share/zsh/site-functions/_aichat "${GHPROXY}${COMP_ZSH}"
 
 INTE_ZSH="https://raw.githubusercontent.com/sigoden/aichat/main/scripts/shell-integration/integration.zsh"
-curl -s -L "${GHPROXY}${INTE_ZSH}" | sed 's#\\ee#^Y#' > ~/.zshrc.d/90aichat.zsh
+curl -s -L "${GHPROXY}${INTE_ZSH}" | sed 's#\\ee#^Y#' > ~/.zshrc.d/80aichat.zsh
 
 # RAC required tools
 sudo apt install poppler-utils

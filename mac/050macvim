@@ -4,9 +4,3 @@ brew install lua python
 brew install macvim
 
 brew install font-meslo-lg-nerd-font
-
-mkdir -p ~/bin
-ln -sf /Applications/MacVim.app/Contents/bin/view ~/bin/view
-ln -sf /Applications/MacVim.app/Contents/bin/vim ~/bin/vi
-ln -sf /Applications/MacVim.app/Contents/bin/vim ~/bin/vim
-ln -sf /Applications/MacVim.app/Contents/bin/vimdiff ~/bin/vimdiff

@@ -1,6 +1,0 @@
-#!/bin/sh
-
-asdf plugin add java
-asdf global java system 
-#asdf install java liberica-1.8.0
-asdf reshim

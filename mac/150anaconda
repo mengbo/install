@@ -44,4 +44,4 @@ fpath+=~/.zsh/conda-zsh-completion
 zstyle ':completion::complete:*' use-cache 1
 EOF
 
-conda create --name ${USER} --clone base
+#conda create --name ${USER} --clone base

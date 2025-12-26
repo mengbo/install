@@ -2,6 +2,9 @@
 
 brew install lima
 
+# The guest agents for non-native architectures
+# brew install lima-additional-guestagents
+
 # limactl create --list-templates
 # limactl start --name=default --vm-type=vz --cpus=4 --memory=8
 # lima uname -a

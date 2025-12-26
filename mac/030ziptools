@@ -1,0 +1,6 @@
+#!/bin/sh -v
+
+brew install rar
+brew install p7zip
+brew install unar
+

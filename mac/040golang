@@ -1,3 +1,13 @@
 #!/bin/sh -v
 
 brew install go
+
+go version
+go env -w GOPROXY=https://goproxy.cn,direct
+go env -w GOSUMDB=off
+go env -w GOPATH=$HOME/.go
+go env -w GOBIN=$HOME/.local/bin
+
+go install golang.org/x/tools/gopls@latest
+go install github.com/go-delve/delve/cmd/dlv@latest
+go install golang.org/x/tools/cmd/goimports@latest

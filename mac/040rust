@@ -1,0 +1,9 @@
+#!/bin/sh -v
+
+brew install rust
+
+rustup-init -y --no-modify-path
+
+cat > ~/.profile.d/rust.sh << 'EOF'
+. "$HOME/.cargo/env"
+EOF

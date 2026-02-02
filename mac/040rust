@@ -1,6 +1,6 @@
 #!/bin/sh -v
 
-brew install rust
+brew install rustup
 
 rustup-init -y --no-modify-path
 

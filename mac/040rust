@@ -4,6 +4,6 @@ brew install rust
 
 rustup-init -y --no-modify-path
 
-cat > ~/.profile.d/rust.sh << 'EOF'
+cat > ~/.zshrc.d/20rust.zsh << 'EOF'
 . "$HOME/.cargo/env"
 EOF

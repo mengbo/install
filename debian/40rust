@@ -1,0 +1,8 @@
+#!/bin/sh -v
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \
+	| sh -s -- -y --no-modify-path
+
+cat > ~/.profile.d/rust.sh << 'EOF'
+. "$HOME/.cargo/env"
+EOF

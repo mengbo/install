@@ -6,3 +6,11 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \
 cat > ~/.zshrc.d/20rust.zsh << 'EOF'
 . "$HOME/.cargo/env"
 EOF
+
+cat > ~/.cargo/config.toml << 'EOF'
+[source.crates-io]
+replace-with = 'ustc'
+
+[registries.ustc]
+index = "sparse+https://mirrors.ustc.edu.cn/crates.io-index/"
+EOF

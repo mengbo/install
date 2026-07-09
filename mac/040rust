@@ -2,10 +2,8 @@
 
 brew install rustup
 
-rustup-init -y --no-modify-path
-
 cat > ~/.zshrc.d/20rust.zsh << 'EOF'
-. "$HOME/.cargo/env"
+export PATH="/opt/homebrew/opt/rustup/bin:$HOME/.cargo/bin:$PATH"
 EOF
 
 cat > ~/.cargo/config.toml << 'EOF'

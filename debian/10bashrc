@@ -3,31 +3,31 @@
 sudo apt install bash-completion
 
 cp ~/.profile ~/.profile.orig
-cat > ~/.profile <<EOF
+cat > ~/.profile <<'EOF'
 # if running bash
-if [ -n "\$BASH_VERSION" ]; then
+if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
-    if [ -f "\$HOME/.bashrc" ]; then
-	. "\$HOME/.bashrc"
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
     fi
 fi
 EOF
 
 cp ~/.bashrc ~/.bashrc.orig
-cat > ~/.bashrc << EOF
+cat > ~/.bashrc << 'EOF'
 # If running interactively
-if [[ \$- == *i* ]]; then
+if [[ $- == *i* ]]; then
     . /etc/skel/.bashrc
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "\$HOME/bin" ] ; then
-    PATH="\$HOME/bin:\$PATH"
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "\$HOME/.local/bin" ] ; then
-    PATH="\$HOME/.local/bin:\$PATH"
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
 fi
 
 # Use a vi-style command line editing interface
@@ -36,8 +36,8 @@ set -o vi
 # Load ~/.bashrc.d/*.bash
 if [ -d ~/.bashrc.d ]; then
     for i in ~/.bashrc.d/*.bash; do
-        if [ -r \$i ]; then
-            source \$i
+        if [ -r $i ]; then
+            source $i
         fi
     done
     unset i
@@ -46,8 +46,8 @@ fi
 # Load ~/.profile.d/*.sh
 if [ -d ~/.profile.d ]; then
     for i in ~/.profile.d/*.sh; do
-        if [ -r \$i ]; then
-            source \$i
+        if [ -r $i ]; then
+            source $i
         fi
     done
     unset i

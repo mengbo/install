@@ -11,6 +11,14 @@ sudo tee /etc/docker/daemon.json > /dev/null <<'EOF'
       "base": "172.18.0.0/16",
       "size": 24
     }
+  ],
+  "proxies": {
+    "http-proxy": "http://clash-server:7890",
+    "https-proxy": "http://clash-server:7890",
+    "no-proxy": "127.0.0.0/8,172.17.0.0/16,172.18.0.0/16,192.168.0.0/16,10.0.0.0/8"
+  },
+  "registry-mirrors": [
+    "https://docker.m.daocloud.io"
   ]
 }
 EOF

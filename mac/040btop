@@ -1,0 +1,86 @@
+#!/bin/sh -v
+
+brew install btop
+
+mkdir -p ~/.config/btop/themes
+
+cat > ~/.config/btop/themes/selenized-dark.theme << 'EOF'
+# Selenized Dark theme for btop
+# Color palette by Jan Warchoł
+
+# Main background, empty background
+theme[main_bg]="#103c48"
+
+# Main text color
+theme[main_fg]="#adbcbc"
+
+# Title text color
+theme[title]="#adbcbc"
+
+# Highlight messages text color
+theme[hi_fg]="#4695f7"
+
+# Selected item background color
+theme[selected_bg]="#184956"
+
+# Selected item text color
+theme[selected_fg]="#cad8d9"
+
+# Color of inactive text
+theme[inactive_fg]="#72898f"
+
+# Misc colors for graph edges and borders
+theme[graph_text]="#adbcbc"
+theme[meter_bg]="#184956"
+theme[proc_misc]="#eb6a58"
+
+# Cpu box outline color
+theme[cpu_box]="#2d5b69"
+
+# Memory box outline color
+theme[mem_box]="#2d5b69"
+
+# Net box outline color
+theme[net_box]="#2d5b69"
+
+# Proc box outline color
+theme[proc_box]="#2d5b69"
+
+# Box divider line and text
+theme[div_line]="#2d5b69"
+
+# Temperature graph colors
+theme[temp_start]="#2aa889"
+theme[temp_mid]="#db9d3a"
+theme[temp_end]="#ed4a46"
+
+# CPU graph colors
+theme[cpu_start]="#2aa889"
+theme[cpu_mid]="#4695f7"
+theme[cpu_end]="#af88eb"
+
+# Mem graph colors
+theme[mem_start]="#db9d3a"
+theme[mem_mid]="#eb6a58"
+theme[mem_end]="#ed4a46"
+
+# Net graph colors
+theme[net_start]="#2aa889"
+theme[net_mid]="#4695f7"
+theme[net_end]="#af88eb"
+
+# Process graph colors
+theme[proc_start]="#2aa889"
+theme[proc_mid]="#4695f7"
+theme[proc_end]="#af88eb"
+EOF
+
+# The Selenized theme is the only customized option; every other setting keeps
+# btop's built-in default, so only the color_theme line is touched here.
+CONF="$HOME/.config/btop/btop.conf"
+THEME="$HOME/.config/btop/themes/selenized-dark.theme"
+if [ -f "$CONF" ] && grep -q '^color_theme' "$CONF"; then
+	sed -i '' "s|^color_theme = .*|color_theme = \"$THEME\"|" "$CONF"
+else
+	printf 'color_theme = "%s"\n' "$THEME" >> "$CONF"
+fi
